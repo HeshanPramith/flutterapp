@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:testapp/const.dart';
 
 class Mainpage extends StatefulWidget {
-  const Mainpage({super.key});
+  const Mainpage({super.key, required String title});
 
   @override
   State<Mainpage> createState() => _MainpageState();
 }
 
 class _MainpageState extends State<Mainpage> {
-  int height = 50;
+  int height = 150;
   int weight = 70;
 
   late double total = calbmi(height: height, weight: weight);
@@ -19,32 +19,46 @@ class _MainpageState extends State<Mainpage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
           color: Colors.white,
           child: Column(
             children: [
-              const Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Icon(Icons.arrow_back_ios_new, size: 30),
-                        Text("Back"),
-                      ],
+              const ColoredBox(
+                color: Color.fromARGB(255, 7, 38, 143),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.arrow_back_ios_new,
+                            size: 30,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
+                          Text("Back",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 255, 255, 255))),
+                        ],
+                      ),
                     ),
-                  ),
-                  Spacer(),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Icon(Icons.settings, size: 30),
-                        Text("Settings"),
-                      ],
-                    ),
-                  )
-                ],
+                    Spacer(),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.settings,
+                            size: 30,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
+                          Text("Settings",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 255, 255, 255))),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 50,
@@ -55,7 +69,7 @@ class _MainpageState extends State<Mainpage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        const Text("Left Data"),
+                        const Text("Height (cm)"),
                         Text(
                           "$height",
                           style: kbasemix,
@@ -63,6 +77,8 @@ class _MainpageState extends State<Mainpage> {
                         Row(
                           children: [
                             FloatingActionButton(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 194, 14, 14),
                               onPressed: () {
                                 setState(() {
                                   if (height > 50) height--;
@@ -73,12 +89,15 @@ class _MainpageState extends State<Mainpage> {
                               child: const Icon(
                                 Icons.remove,
                                 size: 30,
+                                color: Color.fromARGB(255, 255, 255, 255),
                               ),
                             ),
                             const SizedBox(
                               width: 20,
                             ),
                             FloatingActionButton(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 12, 187, 26),
                               onPressed: () {
                                 setState(() {
                                   if (height < 180) height++;
@@ -89,6 +108,7 @@ class _MainpageState extends State<Mainpage> {
                               child: const Icon(
                                 Icons.add,
                                 size: 30,
+                                color: Color.fromARGB(255, 255, 255, 255),
                               ),
                             )
                           ],
@@ -101,7 +121,7 @@ class _MainpageState extends State<Mainpage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        const Text("Right Data"),
+                        const Text("Weight (kg)"),
                         Text(
                           "$weight",
                           style: kbasemix,
@@ -109,6 +129,8 @@ class _MainpageState extends State<Mainpage> {
                         Row(
                           children: [
                             FloatingActionButton(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 194, 14, 14),
                               onPressed: () {
                                 setState(() {
                                   if (weight > 40) weight--;
@@ -119,12 +141,15 @@ class _MainpageState extends State<Mainpage> {
                               child: const Icon(
                                 Icons.remove,
                                 size: 30,
+                                color: Color.fromARGB(255, 255, 255, 255),
                               ),
                             ),
                             const SizedBox(
                               width: 20,
                             ),
                             FloatingActionButton(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 12, 187, 26),
                               onPressed: () {
                                 setState(() {
                                   if (weight < 250) weight++;
@@ -135,6 +160,7 @@ class _MainpageState extends State<Mainpage> {
                               child: const Icon(
                                 Icons.add,
                                 size: 30,
+                                color: Color.fromARGB(255, 255, 255, 255),
                               ),
                             )
                           ],
