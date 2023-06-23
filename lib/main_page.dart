@@ -1,195 +1,133 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/const.dart';
+import 'package:topjobs/screens/detail.dart';
 
-class Mainpage extends StatefulWidget {
-  const Mainpage({super.key, required String title});
+void main() => runApp(const Mainpage());
+
+class Mainpage extends StatelessWidget {
+  const Mainpage({super.key});
 
   @override
-  State<Mainpage> createState() => _MainpageState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "JobList",
+      theme: ThemeData(),
+      home: const MyHomePage(),
+    );
+  }
 }
 
-class _MainpageState extends State<Mainpage> {
-  int height = 150;
-  int weight = 70;
-
-  late double total = calbmi(height: height, weight: weight);
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          color: Colors.white,
-          child: Column(
-            children: [
-              const ColoredBox(
-                color: Color.fromARGB(255, 7, 38, 143),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.arrow_back_ios_new,
-                            size: 30,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Text("Back",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255))),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.settings,
-                            size: 30,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Text("Settings",
-                              style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255))),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        const Text("Height (cm)"),
-                        Text(
-                          "$height",
-                          style: kbasemix,
-                        ),
-                        Row(
-                          children: [
-                            FloatingActionButton(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 194, 14, 14),
-                              onPressed: () {
-                                setState(() {
-                                  if (height > 50) height--;
-                                  total =
-                                      calbmi(height: height, weight: weight);
-                                });
-                              },
-                              child: const Icon(
-                                Icons.remove,
-                                size: 30,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            FloatingActionButton(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 12, 187, 26),
-                              onPressed: () {
-                                setState(() {
-                                  if (height < 180) height++;
-                                  total =
-                                      calbmi(height: height, weight: weight);
-                                });
-                              },
-                              child: const Icon(
-                                Icons.add,
-                                size: 30,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  const Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        const Text("Weight (kg)"),
-                        Text(
-                          "$weight",
-                          style: kbasemix,
-                        ),
-                        Row(
-                          children: [
-                            FloatingActionButton(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 194, 14, 14),
-                              onPressed: () {
-                                setState(() {
-                                  if (weight > 40) weight--;
-                                  total =
-                                      calbmi(height: height, weight: weight);
-                                });
-                              },
-                              child: const Icon(
-                                Icons.remove,
-                                size: 30,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            FloatingActionButton(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 12, 187, 26),
-                              onPressed: () {
-                                setState(() {
-                                  if (weight < 250) weight++;
-                                  total =
-                                      calbmi(height: height, weight: weight);
-                                });
-                              },
-                              child: const Icon(
-                                Icons.add,
-                                size: 30,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Column(
-                children: [
-                  const Text("My Data"),
-                  Text(
-                    total.toStringAsFixed(2),
-                    style: ktotal,
-                  )
-                ],
-              )
-            ],
+      appBar: AppBar(
+        title: const Text(
+          'topjobs',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Verdana',
           ),
         ),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: <Color>[
+                  Color.fromARGB(255, 177, 35, 35),
+                  Color.fromARGB(255, 119, 13, 13)
+                ]),
+          ),
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.notifications),
+            color: Colors.white,
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.settings),
+            color: Colors.white,
+          )
+        ],
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.menu),
+          color: Colors.white,
+        ),
       ),
+      body: _buildListView(context),
     );
   }
 
-  double calbmi({required int height, required int weight}) {
-    return (weight / (height * height)) * 10000;
+  ListView _buildListView(BuildContext context) {
+    final items = [
+      'Ful-Stack Developer - SSE Java',
+      'UI/UX Engineer - SSE',
+      'QA Engineer',
+      'Project Manager',
+      'HR - Intern',
+      'Production Executive - Screen Printing',
+      'Manager (R&D)',
+      'Assistant Engineer (Sales / Mechanical)',
+      'Receptionist (Male)',
+      'Ful-Stack Developer - SSE Java',
+      'UI/UX Engineer - SSE',
+      'QA Engineer',
+      'Project Manager',
+      'HR - Intern',
+      'Production Executive - Screen Printing',
+      'Manager (R&D)',
+      'Assistant Engineer (Sales / Mechanical)',
+      'Receptionist (Male)',
+    ];
+
+    final subtitles = [
+      "GENESIIS",
+      "Dialog",
+      "WSO2",
+      "Virtusa",
+      "Sysco Labs",
+      "ISM APAC",
+      "MIT",
+      "SLT",
+      "Creative Solutions",
+      "GENESIIS",
+      "Dialog",
+      "WSO2",
+      "Virtusa",
+      "Sysco Labs",
+      "ISM APAC",
+      "MIT",
+      "SLT",
+      "Creative Solutions",
+    ];
+
+    return ListView.builder(
+      padding: const EdgeInsets.all(8),
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return Card(
+          child: ListTile(
+            title: Text(items[index]),
+            subtitle: Text(subtitles[index]),
+            trailing: IconButton(
+              icon: const Icon(Icons.arrow_forward_ios_outlined),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddView(index)));
+              },
+            ),
+          ),
+        );
+      },
+    );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:testapp/main_page.dart';
+import 'package:topjobs/main_page.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -17,19 +17,11 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 3));
-    animation = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
-    controller.repeat();
-
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
-    Future.delayed(const Duration(seconds: 10), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (_) => const Mainpage(title: "Heshan"),
+        builder: (_) => const Mainpage(),
       ));
     });
   }
@@ -48,37 +40,67 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/bg.jpg"), fit: BoxFit.cover),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: <Color>[
+              Color.fromARGB(255, 255, 255, 255),
+              Color.fromARGB(255, 168, 26, 26),
+              Color.fromARGB(255, 92, 7, 7)
+            ],
+          ),
         ),
-        child: Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Welcome To Test App',
+            Text(
+              'Welcome To',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
+                fontSize: 20,
+                fontWeight: FontWeight.w300,
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              'tj',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 100,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'VerdanaBold',
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              'topjobs',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 36,
+                fontWeight: FontWeight.w600,
+                fontFamily: 'verdana',
+              ),
+            ),
+            Text(
+              'Recruitement made easy',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 12,
                 fontWeight: FontWeight.w400,
+                fontFamily: 'verdana',
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 50,
             ),
-            RotationTransition(
-              turns: animation,
-              child: const Icon(
-                Icons.webhook,
-                size: 80,
-                color: Colors.white,
-              ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            const Text(
-              'Flutter By Heshan',
+            Text(
+              'Flutter By Heshan Pramith',
               style: TextStyle(
+                fontWeight: FontWeight.w300,
                 color: Colors.white,
                 fontSize: 14,
               ),
