@@ -37,6 +37,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
+  floating_text: ^0.2.0
+  font_awesome_flutter: 
 
 dev_dependencies:
   flutter_test:
@@ -64,7 +66,19 @@ flutter:
   assets:
     - assets/images/bg.jpg
     - assets/logo/logo.png
-    - assets/ads/1022c9hx.png
+    - assets/banners/banner1.png
+    - assets/banners/banner2.png
+    - assets/banners/banner3.png
+    - assets/banners/banner4.png
+    - assets/banners/banner5.png
+    - assets/company/genesiis.png
+    - assets/company/dialog.png
+    - assets/company/wso2.png
+    - assets/company/virtusa.png
+    - assets/company/syscolabs.png
+    - assets/company/ism.png
+    - assets/company/mit.png
+    - assets/company/slt.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

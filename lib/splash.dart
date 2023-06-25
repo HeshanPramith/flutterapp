@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:topjobs/main_page.dart';
+import 'package:floating_text/floating_text.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -19,7 +20,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 10), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (_) => const Mainpage(),
       ));
@@ -44,7 +45,6 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: <Color>[
-              Color.fromARGB(255, 255, 255, 255),
               Color.fromARGB(255, 168, 26, 26),
               Color.fromARGB(255, 92, 7, 7)
             ],
@@ -70,7 +70,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                 color: Colors.white,
                 fontSize: 100,
                 fontWeight: FontWeight.w800,
-                fontFamily: 'VerdanaBold',
+                fontFamily: 'verdana',
               ),
             ),
             SizedBox(
@@ -90,8 +90,26 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 12,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w300,
                 fontFamily: 'verdana',
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            FloatingText(
+              text: 'Explore More Than 1M+ Jobs',
+              repeat: true,
+              repeatCount: 500,
+              isRTL: false,
+              duration: Duration(milliseconds: 100),
+              textStyle: TextStyle(
+                fontSize: 20,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+              floatingTextStyle: TextStyle(
+                color: Color.fromARGB(255, 122, 18, 18),
+                fontSize: 20,
               ),
             ),
             SizedBox(
