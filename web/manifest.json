@@ -1,6 +1,6 @@
 {
-    "name": "testapp",
-    "short_name": "testapp",
+    "name": "topjobs",
+    "short_name": "topjobs",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
