@@ -1,4 +1,4 @@
-package com.example.testapp
+package com.example.topjobs
 
 import io.flutter.embedding.android.FlutterActivity
 
