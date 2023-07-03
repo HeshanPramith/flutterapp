@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:topjobs/constants.dart';
 import 'package:topjobs/models/hotjobs.dart';
+import 'package:topjobs/views/job_detail.dart';
 import 'package:topjobs/widgets/popular_card.dart';
 import 'package:topjobs/widgets/popular_card2.dart';
 
@@ -159,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 25.0,
                 ),
                 Text(
-                  'Popular Jobs',
+                  'Recent Jobs',
                   style: kTitleStyle,
                 ),
                 const SizedBox(
@@ -180,7 +181,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         // ignore: non_constant_identifier_names
                         var Hotjobs = hotjobList[index];
                         return InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        JobDetail(hotjobs: Hotjobs)),
+                              );
+                            },
                             child: index == 0
                                 ? PopularCard(hotjobs: Hotjobs)
                                 : PopularCard2(hotjobs: Hotjobs));
@@ -188,7 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 const SizedBox(height: 20.0),
                 Text(
-                  'Recent Jobs',
+                  'Hot Jobs',
                   style: kTitleStyle,
                 ),
                 ListView.builder(
@@ -199,55 +207,65 @@ class _MyHomePageState extends State<MyHomePage> {
                   shrinkWrap: true,
                   physics: const ScrollPhysics(),
                   itemBuilder: (context, index) {
-                    var recent = hotjobList[index];
-                    return Card(
-                      elevation: 0.0,
-                      margin: const EdgeInsets.only(top: 10.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: ListTile(
-                          leading: Container(
-                            width: 50.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12.0),
-                                image: DecorationImage(
-                                    image: AssetImage(recent.imageUrl))),
+                    var htjobs = hotjobList[index];
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => JobDetail(hotjobs: htjobs),
                           ),
-                          title: Text(
-                            recent.description,
-                            style: kTitleStyle.copyWith(
-                                fontSize: 16, fontWeight: FontWeight.w500),
-                          ),
-                          subtitle: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  '${recent.title} ⦁ ${recent.jdposition}',
-                                  style: const TextStyle(fontSize: 12),
-                                ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  recent.expdate,
-                                  style: const TextStyle(
-                                    fontSize: 10,
-                                    color: Color.fromARGB(255, 24, 156, 41),
+                        );
+                      },
+                      child: Card(
+                        elevation: 0.0,
+                        margin: const EdgeInsets.only(top: 10.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: ListTile(
+                            leading: Container(
+                              width: 50.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  image: DecorationImage(
+                                      image: AssetImage(htjobs.imageUrl))),
+                            ),
+                            title: Text(
+                              htjobs.description,
+                              style: kTitleStyle.copyWith(
+                                  fontSize: 16, fontWeight: FontWeight.w500),
+                            ),
+                            subtitle: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  const SizedBox(
+                                    height: 5,
                                   ),
-                                ),
-                              ]),
-                          trailing: const Icon(
-                            FontAwesomeIcons.fireFlameCurved,
-                            color: Colors.red,
-                            size: 16,
+                                  Text(
+                                    '${htjobs.title} ⦁ ${htjobs.jdposition}',
+                                    style: const TextStyle(fontSize: 12),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    htjobs.expdate,
+                                    style: const TextStyle(
+                                      fontSize: 10,
+                                      color: Color.fromARGB(255, 24, 156, 41),
+                                    ),
+                                  ),
+                                ]),
+                            trailing: const Icon(
+                              FontAwesomeIcons.fireFlameCurved,
+                              color: Colors.red,
+                              size: 16,
+                            ),
                           ),
                         ),
                       ),

@@ -10,6 +10,8 @@ class Hotjobs {
   final String jbtechnology;
   final String jbsalary;
   final String jbexp;
+  final String jobopportunity;
+  final String aboutcompany;
   final List<String> tag;
   final List<String> jobResponsbilities;
 
@@ -25,6 +27,8 @@ class Hotjobs {
     required this.jbtechnology,
     required this.jbsalary,
     required this.jbexp,
+    required this.jobopportunity,
+    required this.aboutcompany,
     required this.tag,
     required this.jobResponsbilities,
   });
@@ -40,17 +44,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -63,17 +71,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -86,17 +98,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -109,22 +125,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "Sysco Labs",
-      description: "Project Manager",
+      description: "Senior Project Manager",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/syscolabs.png',
@@ -132,22 +152,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "ISM",
-      description: "Project Manager",
+      description: "Tech Lead",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/ism.png',
@@ -155,22 +179,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "MIT",
-      description: "Project Manager",
+      description: "Senior QA",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/mit.png',
@@ -178,17 +206,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -201,17 +233,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -224,17 +260,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -247,17 +287,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -270,17 +314,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -293,22 +341,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "Sysco Labs",
-      description: "Project Manager",
+      description: "Senior Project Manager",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/syscolabs.png',
@@ -316,22 +368,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "ISM",
-      description: "Project Manager",
+      description: "Tech Lead",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/ism.png',
@@ -339,22 +395,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "MIT",
-      description: "Project Manager",
+      description: "Senior QA",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/mit.png',
@@ -362,17 +422,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -385,17 +449,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -408,17 +476,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -431,17 +503,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -454,17 +530,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -477,22 +557,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "Sysco Labs",
-      description: "Project Manager",
+      description: "Senior Project Manager",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/syscolabs.png',
@@ -500,22 +584,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "ISM",
-      description: "Project Manager",
+      description: "Tech Lead",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/ism.png',
@@ -523,22 +611,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "MIT",
-      description: "Project Manager",
+      description: "Senior QA",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/mit.png',
@@ -546,17 +638,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -569,17 +665,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -592,17 +692,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -615,17 +719,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -638,17 +746,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -661,22 +773,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "Sysco Labs",
-      description: "Project Manager",
+      description: "Senior Project Manager",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/syscolabs.png',
@@ -684,22 +800,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "ISM",
-      description: "Project Manager",
+      description: "Tech Lead",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/ism.png',
@@ -707,22 +827,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "MIT",
-      description: "Project Manager",
+      description: "Senior QA",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/mit.png',
@@ -730,17 +854,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -753,17 +881,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -776,17 +908,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -799,17 +935,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -822,17 +962,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -845,22 +989,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "Sysco Labs",
-      description: "Project Manager",
+      description: "Senior Project Manager",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/syscolabs.png',
@@ -868,22 +1016,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "ISM",
-      description: "Project Manager",
+      description: "Tech Lead",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/ism.png',
@@ -891,22 +1043,26 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
       title: "MIT",
-      description: "Project Manager",
+      description: "Senior QA",
       expdate: 'Sun Dec 02 2023',
       artwork: 'https://iili.io/HPgJmgt.md.png',
       imageUrl: 'assets/company/mit.png',
@@ -914,17 +1070,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -937,17 +1097,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     ),
     Hotjobs(
@@ -960,17 +1124,21 @@ class Hotjobs {
       jdposition: 'Full Time',
       jblocation: 'Colombo 4, Sri Lanka',
       jbtechnology: 'Angular/React/Java',
-      jbsalary: 'N/A',
+      jbsalary: 'LKR 130,000 / mo',
       jbexp: '3-5 Years',
+      aboutcompany:
+          'In quis efficitur diam. Nunc sed consectetur lacus. Vestibulum sollicitudin libero in risus auctor, id pellentesque elit euismod. Fusce ultricies in nisi id sodales. Praesent quis tempor diam, vitae tristique justo. Nam et ullamcorper nulla. Ut eu nibh bibendum, auctor ante ut, placerat dui. Pellentesque sit amet blandit tellus, in porttitor diam.',
+      jobopportunity:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mattis sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus suscipit risus ante",
       tag: [
         "Full Time",
         "Remote",
         "Anywhere",
       ],
       jobResponsbilities: [
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
-        "Calendly is looking for a UI/UX Designer in Marketing to Join our fast growing team. This role will report to the Director of UX and work alongside the marketing team to design experiences that help grow our business.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet. Suspendisse in congue quam. Proin viverra sem sed tortor egestas, a sodales dolor aliquet.",
+        "Company is looking for a UI/UX Designer in Marketing to Join our fast growing team. Morbi quis rhoncus enim. Integer cursus suscipit quam, sit amet sagittis ex tristique sed. Pellentesque quis massa at nisl commodo imperdiet.",
       ],
     )
   ];

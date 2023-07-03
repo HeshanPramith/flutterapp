@@ -10,8 +10,14 @@ var kPageTitleStyle = GoogleFonts.openSans(
   color: kBlack,
   wordSpacing: 2.5,
 );
+
 var kTitleStyle = GoogleFonts.openSans(
   fontSize: 16.0,
-  fontWeight: FontWeight.w400,
+  fontWeight: FontWeight.w500,
+  color: kBlack,
+);
+
+var kSubtitleStyle = GoogleFonts.openSans(
+  fontSize: 14.0,
   color: kBlack,
 );
