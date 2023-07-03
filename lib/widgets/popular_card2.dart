@@ -77,11 +77,11 @@ class PopularCard2 extends StatelessWidget {
                               top: 0, right: 10, bottom: 0, left: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.0),
-                            color: Colors.white,
+                            color: const Color.fromARGB(255, 199, 64, 64),
                           ),
                           child: Text(e,
                               style: kTitleStyle.copyWith(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: 10.0,
                               )),
                         ))

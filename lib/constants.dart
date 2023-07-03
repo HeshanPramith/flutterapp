@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const kBlack = Color(0xFF21202A);
+const kBlack = Color.fromARGB(255, 0, 0, 0);
 const kBlackAccent = Color(0xFF3A3A3A);
 
 var kPageTitleStyle = GoogleFonts.openSans(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:topjobs/constants.dart';
 import 'package:topjobs/models/hotjobs.dart';
 import 'package:topjobs/views/job_detail.dart';
@@ -43,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       },
       child: Scaffold(
         key: _key,
-        backgroundColor: const Color.fromARGB(255, 236, 236, 236),
+        backgroundColor: const Color.fromARGB(255, 119, 13, 13),
         appBar: AppBar(
           systemOverlayStyle: const SystemUiOverlayStyle(
             statusBarColor: Color.fromARGB(255, 119, 13, 13), // <-- SEE HERE
@@ -90,19 +91,44 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
         body: Container(
-          margin:
-              const EdgeInsets.only(top: 5, right: 18, bottom: 18, left: 18),
+          height: double.infinity,
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.white,
+                  Colors.white,
+                  Color.fromARGB(255, 216, 216, 216),
+                ],
+              ),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40.0),
+                  topRight: Radius.circular(40.0))),
+          padding:
+              const EdgeInsets.only(top: 20, right: 18, bottom: 18, left: 18),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const SizedBox(
-                  height: 5,
+                  height: 10,
                 ),
-                Text(
-                  'Hi Welcome!,',
-                  style: kPageTitleStyle,
-                ),
+                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                  Text(
+                    'Hi Welcome!',
+                    style: kPageTitleStyle,
+                  ),
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Text(
+                      '3 min ago',
+                      style: kPageTitleStyle.copyWith(
+                          fontSize: 11, color: Colors.black26),
+                    ),
+                  )
+                ]),
                 Text(
                   'Find your Dream Job',
                   style: kPageTitleStyle.copyWith(
@@ -123,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           padding: const EdgeInsets.only(
                               top: 0, right: 15, bottom: 0, left: 15),
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: const Color.fromARGB(255, 202, 202, 202),
                               borderRadius: BorderRadius.circular(10)),
                           child: TextField(
                             onChanged: (value) => updateList(value),
@@ -141,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Container(
                         width: 50.0,
-                        height: 50.0,
+                        height: 48.0,
                         margin: const EdgeInsets.only(left: 15),
                         decoration: const BoxDecoration(
                             color: Color.fromARGB(255, 119, 13, 13),
@@ -183,11 +209,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         return InkWell(
                             onTap: () {
                               Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        JobDetail(hotjobs: Hotjobs)),
-                              );
+                                  context,
+                                  PageTransition(
+                                      type: PageTransitionType.fade,
+                                      duration:
+                                          const Duration(milliseconds: 200),
+                                      child: JobDetail(hotjobs: Hotjobs)));
                             },
                             child: index == 0
                                 ? PopularCard(hotjobs: Hotjobs)
@@ -211,11 +238,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     return InkWell(
                       onTap: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => JobDetail(hotjobs: htjobs),
-                          ),
-                        );
+                            context,
+                            PageTransition(
+                                type: PageTransitionType.fade,
+                                duration: const Duration(milliseconds: 200),
+                                child: JobDetail(hotjobs: htjobs)));
                       },
                       child: Card(
                         elevation: 0.0,

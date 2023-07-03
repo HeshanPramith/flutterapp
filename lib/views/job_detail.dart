@@ -4,10 +4,17 @@ import 'package:topjobs/views/description_tab.dart';
 import 'package:topjobs/views/overview_tab.dart';
 import '../constants.dart';
 
-class JobDetail extends StatelessWidget {
+class JobDetail extends StatefulWidget {
   const JobDetail({super.key, required this.hotjobs});
 
   final Hotjobs hotjobs;
+
+  @override
+  State<JobDetail> createState() => _JobDetailState();
+}
+
+class _JobDetailState extends State<JobDetail> {
+  bool click = true;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,7 @@ class JobDetail extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          hotjobs.title,
+          widget.hotjobs.title,
           style: kTitleStyle.copyWith(
             color: Colors.white,
             fontSize: 24,
@@ -52,7 +59,7 @@ class JobDetail extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Container(
-                constraints: const BoxConstraints(maxHeight: 300.0),
+                alignment: Alignment.center,
                 child: Column(
                   children: <Widget>[
                     Center(
@@ -62,28 +69,28 @@ class JobDetail extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
                             image: DecorationImage(
-                                image: AssetImage(hotjobs.imageUrl))),
+                                image: AssetImage(widget.hotjobs.imageUrl))),
                       ),
                     ),
                     const SizedBox(
                       height: 5.0,
                     ),
                     Text(
-                      hotjobs.description,
+                      widget.hotjobs.description,
                       style: kPageTitleStyle,
                     ),
                     const SizedBox(
                       height: 15.0,
                     ),
                     Text(
-                      '${hotjobs.jobref} ⦁ ${hotjobs.jbexp} ⦁ ${hotjobs.jbsalary}',
+                      '${widget.hotjobs.jobref} ⦁ ${widget.hotjobs.jbexp} ⦁ ${widget.hotjobs.jbsalary}',
                       style: kTitleStyle,
                     ),
                     const SizedBox(
                       height: 15.0,
                     ),
                     Text(
-                      hotjobs.jbtechnology,
+                      widget.hotjobs.jbtechnology,
                       style: kTitleStyle,
                     ),
                     const SizedBox(
@@ -91,7 +98,7 @@ class JobDetail extends StatelessWidget {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: hotjobs.tag
+                      children: widget.hotjobs.tag
                           .map((e) => Container(
                                 margin: const EdgeInsets.symmetric(
                                   horizontal: 5.0,
@@ -121,7 +128,7 @@ class JobDetail extends StatelessWidget {
                         ),
                       ),
                       child: TabBar(
-                        indicatorPadding: const EdgeInsets.all(7.0),
+                        indicatorPadding: const EdgeInsets.all(3.0),
                         unselectedLabelColor:
                             const Color.fromARGB(255, 116, 116, 116),
                         indicatorColor: Colors.white,
@@ -146,8 +153,8 @@ class JobDetail extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: <Widget>[
-                    OverviewTab(hotjobs: hotjobs),
-                    DescriptionTab(hotjobs: hotjobs)
+                    OverviewTab(hotjobs: widget.hotjobs),
+                    DescriptionTab(hotjobs: widget.hotjobs)
                   ],
                 ),
               ),
@@ -167,9 +174,31 @@ class JobDetail extends StatelessWidget {
                   width: 50.0,
                   height: 50.0,
                   decoration: BoxDecoration(
-                      border: Border.all(color: kBlack.withOpacity(.5)),
-                      borderRadius: BorderRadius.circular(10.0)),
-                  child: const Icon(Icons.bookmark_border_outlined),
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 64, 115, 209),
+                          width: 2),
+                      borderRadius: BorderRadius.circular(5.0)),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(0),
+                        backgroundColor:
+                            const Color.fromARGB(255, 255, 255, 255),
+                        shadowColor: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          click = !click;
+                        });
+                      },
+                      child: Icon(
+                        (click == false)
+                            ? Icons.bookmark
+                            : Icons.bookmark_border,
+                        color: const Color.fromARGB(255, 64, 115, 209),
+                      )),
                 ),
                 const SizedBox(
                   width: 15.0,

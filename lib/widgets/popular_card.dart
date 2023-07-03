@@ -14,7 +14,7 @@ class PopularCard extends StatelessWidget {
       padding: const EdgeInsets.only(top: 15, right: 15, bottom: 5, left: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
-        color: Colors.white,
+        color: const Color.fromARGB(255, 223, 171, 30),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +28,7 @@ class PopularCard extends StatelessWidget {
                     width: 100,
                     height: 40,
                     color: Colors.white,
-                    padding: const EdgeInsets.all(0),
+                    padding: const EdgeInsets.all(10),
                     child: Image.asset(hotjobs.imageUrl)),
               ),
               const Spacer(),
