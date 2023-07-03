@@ -19,7 +19,7 @@ class PopularCard2 extends StatelessWidget {
           end: Alignment(0.8, 1),
           colors: <Color>[
             Color.fromARGB(255, 184, 12, 12),
-            Color.fromARGB(255, 0, 0, 0),
+            Color.fromARGB(255, 58, 14, 14),
           ], // Gradient from https://learnui.design/tools/gradient-generator.html
           tileMode: TileMode.mirror,
         ),

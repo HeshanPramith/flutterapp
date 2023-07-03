@@ -81,6 +81,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.4"
+  floating_text:
+    dependency: "direct main"
+    description:
+      name: floating_text
+      sha256: "1ede67c2757fc5250a3aeed2ff4d01e0b37db275dc38c02997e34a13a8125aa2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   flutter:
     dependency: "direct main"
     description: flutter
