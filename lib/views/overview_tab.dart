@@ -47,8 +47,7 @@ class OverviewTab extends StatelessWidget {
                         Expanded(
                             child: Text(
                           '$e\n',
-                          style: kSubtitleStyle.copyWith(
-                              fontWeight: FontWeight.w300, height: 2),
+                          style: kSubtitleStyle.copyWith(height: 2),
                         )),
                       ],
                     ))

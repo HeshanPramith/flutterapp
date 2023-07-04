@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:topjobs/constants.dart';
+import 'package:topjobs/models/categories.dart';
 import 'package:topjobs/models/hotjobs.dart';
 import 'package:topjobs/views/job_detail.dart';
 import 'package:topjobs/widgets/popular_card.dart';
@@ -19,6 +21,8 @@ class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   List<Hotjobs> hotjobList = List.from(Hotjobs.hotjobList);
+
+  List<Category> categoryList = List.from(Category.categoryList);
 
   void updateList(String value) {
     //Filter our list
@@ -169,14 +173,72 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 50.0,
                         height: 48.0,
                         margin: const EdgeInsets.only(left: 15),
-                        decoration: const BoxDecoration(
-                            color: Color.fromARGB(255, 119, 13, 13),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
-                        child: const Icon(
-                          FontAwesomeIcons.sliders,
-                          color: Colors.white,
-                          size: 20,
+                        child: Column(
+                          children: [
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      const Color.fromARGB(255, 119, 13, 13),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 5, vertical: 13),
+                                  shadowColor: Colors.transparent,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(7.0)),
+                                  textStyle: const TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold)),
+                              child: const Icon(
+                                FontAwesomeIcons.sliders,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                              onPressed: () {
+                                showModalBottomSheet<void>(
+                                  isScrollControlled: true,
+                                  context: context,
+                                  backgroundColor:
+                                      const Color.fromARGB(0, 119, 13, 13),
+                                  builder: (BuildContext context) {
+                                    return Container(
+                                      height: 300,
+                                      decoration: const BoxDecoration(
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topCenter,
+                                            end: Alignment.bottomCenter,
+                                            colors: [
+                                              Color.fromARGB(255, 172, 24, 24),
+                                              Color.fromARGB(255, 83, 9, 9),
+                                              Color.fromARGB(255, 56, 5, 5),
+                                            ],
+                                          ),
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(25.0),
+                                              topRight: Radius.circular(25.0))),
+                                      alignment: Alignment.topCenter,
+                                      child: CupertinoPicker(
+                                        itemExtent: 50,
+                                        children: categoryList
+                                            .map((category) => Center(
+                                                  child: Text(
+                                                    category.category,
+                                                    style:
+                                                        kSubtitleStyle.copyWith(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontSize: 16,
+                                                            color:
+                                                                Colors.white),
+                                                  ),
+                                                ))
+                                            .toList(),
+                                        onSelectedItemChanged: (index) {},
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -197,29 +259,32 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: double.infinity,
                   height: 170.0,
                   child: ListView.builder(
-                      keyboardDismissBehavior:
-                          ScrollViewKeyboardDismissBehavior.onDrag,
-                      itemCount: hotjobList.length,
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        // ignore: non_constant_identifier_names
-                        var Hotjobs = hotjobList[index];
-                        return InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  PageTransition(
-                                      type: PageTransitionType.fade,
-                                      duration:
-                                          const Duration(milliseconds: 200),
-                                      child: JobDetail(hotjobs: Hotjobs)));
-                            },
-                            child: index == 0
-                                ? PopularCard(hotjobs: Hotjobs)
-                                : PopularCard2(hotjobs: Hotjobs));
-                      }),
+                    keyboardDismissBehavior:
+                        ScrollViewKeyboardDismissBehavior.onDrag,
+                    itemCount: hotjobList.length,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      // ignore: non_constant_identifier_names
+                      var Hotjobs = hotjobList[index];
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.fade,
+                              duration: const Duration(milliseconds: 200),
+                              child: JobDetail(hotjobs: Hotjobs),
+                            ),
+                          );
+                        },
+                        child: index == 0
+                            ? PopularCard(hotjobs: Hotjobs)
+                            : PopularCard2(hotjobs: Hotjobs),
+                      );
+                    },
+                  ),
                 ),
                 const SizedBox(height: 20.0),
                 Text(
