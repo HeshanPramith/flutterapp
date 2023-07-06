@@ -39,6 +39,9 @@ dependencies:
   page_transition: "^2.0.9"
   font_awesome_flutter:
   google_fonts:
+  provider: ^6.0.5
+  dart_rss: ^2.0.1
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
