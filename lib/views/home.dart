@@ -1,12 +1,11 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:topjobs/constants.dart';
 import 'package:topjobs/models/categories.dart';
+import 'package:topjobs/models/feedlist.dart';
 import 'package:topjobs/models/hotjobs.dart';
-import 'package:topjobs/views/job_category.dart';
 import 'package:topjobs/views/job_detail.dart';
 import 'package:topjobs/widgets/popular_card.dart';
 import 'package:topjobs/widgets/popular_card2.dart';
@@ -93,11 +92,13 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.white,
               onPressed: () {
                 Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.fade,
-                        duration: const Duration(milliseconds: 100),
-                        child: const MyHomePage()));
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: const Duration(milliseconds: 100),
+                    child: const MyHomePage(),
+                  ),
+                );
               },
             )
           ],
@@ -201,69 +202,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                 size: 20,
                               ),
                               onPressed: () {
-                                showModalBottomSheet<void>(
-                                  isScrollControlled: true,
-                                  context: context,
-                                  backgroundColor:
-                                      const Color.fromARGB(0, 119, 13, 13),
-                                  builder: (BuildContext context) {
-                                    return Container(
-                                      height: 300,
-                                      padding: const EdgeInsets.all(15),
-                                      decoration: const BoxDecoration(
-                                        gradient: LinearGradient(
-                                          begin: Alignment.topCenter,
-                                          end: Alignment.bottomCenter,
-                                          colors: [
-                                            Color.fromARGB(255, 172, 24, 24),
-                                            Color.fromARGB(255, 83, 9, 9),
-                                            Color.fromARGB(255, 56, 5, 5),
-                                          ],
-                                        ),
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(25.0),
-                                          topRight: Radius.circular(25.0),
-                                        ),
-                                      ),
-                                      alignment: Alignment.topCenter,
-                                      child: ListView.builder(
-                                        keyboardDismissBehavior:
-                                            ScrollViewKeyboardDismissBehavior
-                                                .onDrag,
-                                        itemCount: categoryList.length,
-                                        scrollDirection: Axis.vertical,
-                                        shrinkWrap: true,
-                                        physics: const ScrollPhysics(),
-                                        itemBuilder: (context, index) {
-                                          var category = categoryList[index];
-                                          return InkWell(
-                                            onTap: () {
-                                              Navigator.push(
-                                                context,
-                                                PageTransition(
-                                                  type: PageTransitionType.fade,
-                                                  duration: const Duration(
-                                                      milliseconds: 200),
-                                                  child: Jobcategory(
-                                                      category: category),
-                                                ),
-                                              );
-                                            },
-                                            child: ListTile(
-                                              title: Text(
-                                                category.category,
-                                                style: kTitleStyle.copyWith(
-                                                    color: Colors.white,
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.w400),
-                                              ),
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                    );
-                                  },
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const RSSFeedScreen(),
+                                  ),
                                 );
                               },
                             ),

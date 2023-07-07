@@ -42,6 +42,7 @@ dependencies:
   provider: ^6.0.5
   dart_rss: ^2.0.1
   http: ^0.13.5
+  webfeed:
 
 dev_dependencies:
   flutter_test:

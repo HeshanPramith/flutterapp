@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:topjobs/models/feedlist.dart';
 import 'package:topjobs/views/home.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MyHomePage(),
+      // ignore: prefer_const_constructors
+      home: MyHomePage(),
     );
   }
 }
