@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             style: TextStyle(
               color: Colors.white,
               fontSize: 24,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w500,
               fontFamily: 'Verdana',
             ),
           ),
@@ -127,14 +127,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   'topjobs',
-                  style: kPageTitleStyle,
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 119, 13, 13),
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Verdana',
+                  ),
                 ),
                 Text(
                   'Recruitment Made Easy',
                   style: kPageTitleStyle.copyWith(
                     fontSize: 16,
+                    fontFamily: 'Verdana',
                   ),
                 ),
                 const SizedBox(

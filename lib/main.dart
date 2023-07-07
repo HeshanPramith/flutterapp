@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // ignore: prefer_const_constructors
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }

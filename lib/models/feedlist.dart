@@ -189,12 +189,12 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
           icon: const Icon(Icons.arrow_back_ios),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text(
-          'Select Job Category',
-          style: kTitleStyle.copyWith(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
+        title: const Text(
+          'topjobs',
+          style: TextStyle(
+            color: Color.fromARGB(255, 255, 255, 255),
+            fontSize: 24,
+            fontWeight: FontWeight.w500,
             fontFamily: 'Verdana',
           ),
         ),
@@ -202,96 +202,108 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
       ),
       body: Container(
         height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.white,
-              Colors.white,
-              Color.fromARGB(255, 216, 216, 216),
-            ],
-          ),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(40.0),
-            topRight: Radius.circular(40.0),
-          ),
-        ),
+        color: Colors.transparent,
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.only(
-                top: 20,
-                bottom: 10,
+                top: 10,
+                bottom: 20,
                 left: 15,
                 right: 15,
               ),
               child: Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 child: Text(
-                  'Category List',
+                  'Select Job Category',
                   style: kPageTitleStyle.copyWith(
-                    fontSize: 18,
-                  ),
+                      fontSize: 18, color: Colors.white),
                 ),
               ),
             ),
             Expanded(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                child: SingleChildScrollView(
-                  child: ListView.builder(
-                    keyboardDismissBehavior:
-                        ScrollViewKeyboardDismissBehavior.onDrag,
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    physics: const ScrollPhysics(),
-                    itemCount: rssUrls.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return InkWell(
-                        child: Row(
-                          children: [
-                            const SizedBox(
-                              height: 50,
-                            ),
-                            const SizedBox(
-                              //width: 50,
-                              height: 50,
-                              child: Icon(
-                                FontAwesomeIcons.briefcase,
-                                size: 18,
-                                color: Color.fromARGB(255, 223, 171, 30),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                left: 15,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    rssTitles[index],
-                                    style: kTitleStyle,
+              child: Container(
+                padding: const EdgeInsets.only(top: 20),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.white,
+                      Color.fromARGB(255, 241, 241, 241),
+                      Color.fromARGB(255, 216, 216, 216),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40.0),
+                    topRight: Radius.circular(40.0),
+                  ),
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+                  child: SingleChildScrollView(
+                    child: ListView.builder(
+                      keyboardDismissBehavior:
+                          ScrollViewKeyboardDismissBehavior.onDrag,
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      physics: const ScrollPhysics(),
+                      itemCount: rssUrls.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return InkWell(
+                          child: Card(
+                            elevation: 0.0,
+                            child: Row(
+                              children: [
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                const SizedBox(
+                                  height: 50,
+                                ),
+                                const SizedBox(
+                                  //width: 50,
+                                  height: 50,
+                                  child: Icon(
+                                    FontAwesomeIcons.briefcase,
+                                    size: 18,
+                                    color: Color.fromARGB(255, 223, 171, 30),
                                   ),
-                                  Text(
-                                    'Jobs: ${rssCounts[index]}',
-                                    style: const TextStyle(
-                                      color: Color.fromARGB(255, 119, 13, 13),
-                                    ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 15,
+                                    right: 15,
                                   ),
-                                ],
-                              ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        rssTitles[index],
+                                        style: kTitleStyle,
+                                      ),
+                                      Text(
+                                        'Jobs: ${rssCounts[index]}',
+                                        style: const TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 119, 13, 13),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        onTap: () {
-                          loadRSSFeed(rssUrls[index]);
-                        },
-                      );
-                    },
+                          ),
+                          onTap: () {
+                            loadRSSFeed(rssUrls[index]);
+                          },
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),
