@@ -127,23 +127,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  Text(
-                    'Hi Welcome!',
-                    style: kPageTitleStyle,
-                  ),
-                  const Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 3),
-                    child: Text(
-                      '3 min ago',
-                      style: kPageTitleStyle.copyWith(
-                          fontSize: 11, color: Colors.black26),
-                    ),
-                  )
-                ]),
                 Text(
-                  'Find your Dream Job',
+                  'topjobs',
+                  style: kPageTitleStyle,
+                ),
+                Text(
+                  'Recruitment Made Easy',
                   style: kPageTitleStyle.copyWith(
                     fontSize: 16,
                   ),
@@ -204,8 +193,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const RSSFeedScreen(),
+                                  PageTransition(
+                                    type: PageTransitionType.fade,
+                                    duration: const Duration(milliseconds: 200),
+                                    child: const RSSFeedScreen(),
                                   ),
                                 );
                               },
