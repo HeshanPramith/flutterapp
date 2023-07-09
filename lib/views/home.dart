@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   topLeft: Radius.circular(40.0),
                   topRight: Radius.circular(40.0))),
           padding:
-              const EdgeInsets.only(top: 20, right: 18, bottom: 18, left: 18),
+              const EdgeInsets.only(top: 20, right: 15, bottom: 18, left: 15),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -158,19 +158,22 @@ class _MyHomePageState extends State<MyHomePage> {
                           padding: const EdgeInsets.only(
                               top: 0, right: 15, bottom: 0, left: 15),
                           decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 202, 202, 202),
+                              color: const Color.fromARGB(255, 119, 13, 13),
                               borderRadius: BorderRadius.circular(10)),
                           child: TextField(
                             onChanged: (value) => updateList(value),
                             cursorColor: kBlack,
                             decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Search',
-                                icon: FaIcon(
-                                  FontAwesomeIcons.magnifyingGlass,
-                                  size: 18,
-                                  color: Colors.black,
-                                )),
+                              border: InputBorder.none,
+                              hintText: 'Search Hot Jobs/Recent Jobs',
+                              hintStyle: TextStyle(
+                                  color: Color.fromARGB(111, 255, 255, 255)),
+                              icon: FaIcon(
+                                FontAwesomeIcons.magnifyingGlass,
+                                size: 18,
+                                color: Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            ),
                           ),
                         ),
                       ),

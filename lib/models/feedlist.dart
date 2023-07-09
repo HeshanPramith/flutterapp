@@ -242,7 +242,7 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      top: 0, right: 15, bottom: 15, left: 15),
+                      top: 0, right: 12, bottom: 15, left: 12),
                   child: SingleChildScrollView(
                     child: ListView.builder(
                       keyboardDismissBehavior:
@@ -352,99 +352,161 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
     }
   }
 
+  String searchQuery = '';
+
+  List<RssItem> get filteredItems {
+    if (searchQuery.isEmpty) {
+      return widget.feed.items ?? [];
+    } else {
+      return (widget.feed.items ?? []).where((item) {
+        final title = item.title?.toString().toLowerCase() ?? '';
+        final description = item.description?.toString().toLowerCase() ?? '';
+        return title.contains(searchQuery.toLowerCase()) ||
+            description.contains(searchQuery.toLowerCase());
+      }).toList();
+    }
+  }
+
+  hideKeyboard() {
+    FocusScope.of(context).requestFocus(FocusNode());
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 119, 13, 13),
-      appBar: AppBar(
-        elevation: 0.0,
+    return GestureDetector(
+      onVerticalDragDown: (_) {
+        hideKeyboard();
+      },
+      child: Scaffold(
         backgroundColor: const Color.fromARGB(255, 119, 13, 13),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Text(
-          widget.feed.title?.toString() ?? '',
-          style: kTitleStyle.copyWith(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-            fontFamily: 'Verdana',
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: const Color.fromARGB(255, 119, 13, 13),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            onPressed: () => Navigator.pop(context),
           ),
-        ),
-        centerTitle: true,
-      ),
-      body: Container(
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.white,
-              Color.fromARGB(255, 241, 241, 241),
-              Color.fromARGB(255, 216, 216, 216),
-            ],
+          title: Text(
+            widget.feed.title?.toString() ?? '',
+            style: kTitleStyle.copyWith(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              fontFamily: 'Verdana',
+            ),
           ),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(40.0),
-            topRight: Radius.circular(40.0),
-          ),
+          centerTitle: true,
         ),
-        child: Padding(
-          padding:
-              const EdgeInsets.only(top: 20, right: 15, bottom: 15, left: 15),
-          child: SingleChildScrollView(
-            child: ListView.builder(
-              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              physics: const ScrollPhysics(),
-              itemCount: widget.feed.items?.length ?? 0,
-              itemBuilder: (BuildContext context, int index) {
-                var item = widget.feed.items?[index];
-                // final Uri toLaunch = Uri(
-                //   scheme: 'https',
-                //   host: 'www.topjobs.lk',
-                //   path: 'employer/JobAdvertismentServlet',
-                //   queryParameters: {
-                //     'ac': item?.ac,
-                //     'ec': item?.ec,
-                //     'jc': item?.jc,
-                //     'pg': 'index.jsp',
-                //   },
-                // );
-                final Uri toLaunch = Uri(
-                    scheme: 'https',
-                    host: 'www.topjobs.lk',
-                    path:
-                        'employer/JobAdvertismentServlet?ac=DEFZZZ&ec=DEFZZZ&jc=0001102628&pg=index.jsp');
-                return InkWell(
-                  onTap: () => {_launched = _launchInBrowser(toLaunch)},
-                  child: Card(
-                    elevation: 0.0,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 15),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            item?.title?.toString() ?? '',
-                            style: kTitleStyle.copyWith(fontSize: 16),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(item?.description?.toString() ?? ''),
-                        ],
+        body: Container(
+          height: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.white,
+                Color.fromARGB(255, 241, 241, 241),
+                Color.fromARGB(255, 216, 216, 216),
+              ],
+            ),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40.0),
+              topRight: Radius.circular(40.0),
+            ),
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 20),
+                child: Container(
+                  padding: const EdgeInsets.only(
+                      top: 0, right: 15, bottom: 0, left: 15),
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 119, 13, 13),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: TextField(
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Search Your Job',
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(111, 255, 255, 255)),
+                      icon: FaIcon(
+                        FontAwesomeIcons.magnifyingGlass,
+                        size: 18,
+                        color: Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
+                    onChanged: (value) {
+                      setState(
+                        () {
+                          searchQuery = value;
+                        },
+                      );
+                    },
                   ),
-                );
-              },
-            ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      top: 15, right: 12, bottom: 15, left: 12),
+                  child: SingleChildScrollView(
+                    child: ListView.builder(
+                      keyboardDismissBehavior:
+                          ScrollViewKeyboardDismissBehavior.onDrag,
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      physics: const ScrollPhysics(),
+                      itemCount: filteredItems.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        var item = filteredItems[index];
+                        // final Uri toLaunch = Uri(
+                        //   scheme: 'https',
+                        //   host: 'www.topjobs.lk',
+                        //   path: 'employer/JobAdvertismentServlet',
+                        //   queryParameters: {
+                        //     'ac': item?.ac,
+                        //     'ec': item?.ec,
+                        //     'jc': item?.jc,
+                        //     'pg': 'index.jsp',
+                        //   },
+                        // );
+                        final Uri toLaunch = Uri(
+                            scheme: 'https',
+                            host: 'www.topjobs.lk',
+                            path:
+                                'employer/JobAdvertismentServlet?ac=DEFZZZ&ec=DEFZZZ&jc=0001102628&pg=index.jsp');
+                        return InkWell(
+                          onTap: () => {_launched = _launchInBrowser(toLaunch)},
+                          child: Card(
+                            elevation: 0.0,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 15),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    item.title?.toString() ?? '',
+                                    style: kTitleStyle.copyWith(fontSize: 16),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(item.description?.toString() ?? ''),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
