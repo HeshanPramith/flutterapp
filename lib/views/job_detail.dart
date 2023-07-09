@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:topjobs/models/hotjobs.dart';
 import 'package:topjobs/views/description_tab.dart';
 import 'package:topjobs/views/overview_tab.dart';
@@ -18,6 +19,8 @@ class _JobDetailState extends State<JobDetail> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 119, 13, 13),
       appBar: AppBar(

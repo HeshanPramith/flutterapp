@@ -42,6 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
     return GestureDetector(
       onVerticalDragDown: (_) {
         hideKeyboard();
@@ -161,8 +163,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: const Color.fromARGB(255, 119, 13, 13),
                               borderRadius: BorderRadius.circular(10)),
                           child: TextField(
+                            style: const TextStyle(color: Colors.white),
                             onChanged: (value) => updateList(value),
-                            cursorColor: kBlack,
+                            cursorColor: Colors.white,
                             decoration: const InputDecoration(
                               border: InputBorder.none,
                               hintText: 'Search Hot Jobs/Recent Jobs',

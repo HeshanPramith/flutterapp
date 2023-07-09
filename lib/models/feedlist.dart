@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:page_transition/page_transition.dart';
-// import 'package:flutter/services.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:topjobs/constants.dart';
-// import 'package:page_transition/page_transition.dart';
-// import 'package:topjobs/views/home.dart';
 import 'package:webfeed/webfeed.dart';
 import 'package:http/io_client.dart';
 import 'dart:io';
@@ -181,6 +178,8 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 119, 13, 13),
       appBar: AppBar(
@@ -373,6 +372,8 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
     return GestureDetector(
       onVerticalDragDown: (_) {
         hideKeyboard();
@@ -426,6 +427,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: TextField(
+                    style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Search Your Job',
