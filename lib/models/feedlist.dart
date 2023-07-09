@@ -9,6 +9,7 @@ import 'package:topjobs/constants.dart';
 import 'package:webfeed/webfeed.dart';
 import 'package:http/io_client.dart';
 import 'dart:io';
+import 'package:url_launcher/url_launcher.dart';
 
 class RSSFeedScreen extends StatefulWidget {
   const RSSFeedScreen({Key? key}) : super(key: key);
@@ -240,8 +241,8 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                   ),
                 ),
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+                  padding: const EdgeInsets.only(
+                      top: 0, right: 15, bottom: 15, left: 15),
                   child: SingleChildScrollView(
                     child: ListView.builder(
                       keyboardDismissBehavior:
@@ -257,23 +258,22 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                             child: Row(
                               children: [
                                 const SizedBox(
-                                  width: 15,
+                                  width: 10,
                                 ),
                                 const SizedBox(
                                   height: 50,
                                 ),
                                 const SizedBox(
-                                  //width: 50,
                                   height: 50,
                                   child: Icon(
                                     FontAwesomeIcons.briefcase,
                                     size: 18,
-                                    color: Color.fromARGB(255, 223, 171, 30),
+                                    color: Color.fromARGB(255, 65, 180, 19),
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                    left: 15,
+                                    left: 10,
                                     right: 15,
                                   ),
                                   child: Column(
@@ -283,13 +283,20 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                                     children: [
                                       Text(
                                         rssTitles[index],
-                                        style: kTitleStyle,
+                                        style:
+                                            kTitleStyle.copyWith(fontSize: 16),
+                                        overflow: TextOverflow.fade,
+                                        maxLines: 1,
+                                        softWrap: false,
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
                                       ),
                                       Text(
                                         'Jobs: ${rssCounts[index]}',
                                         style: const TextStyle(
                                           color:
-                                              Color.fromARGB(255, 119, 13, 13),
+                                              Color.fromARGB(255, 15, 146, 15),
                                         ),
                                       ),
                                     ],
@@ -315,10 +322,35 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
   }
 }
 
-class RSSFeedItemsScreen extends StatelessWidget {
+class RSSFeedItemsScreen extends StatefulWidget {
   final RssFeed feed;
 
   const RSSFeedItemsScreen({Key? key, required this.feed}) : super(key: key);
+
+  @override
+  State<RSSFeedItemsScreen> createState() => _RSSFeedItemsScreenState();
+}
+
+class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
+  launchJobLink(String jobLink) async {
+    if (await canLaunchUrl(jobLink as Uri)) {
+      await launchUrl(jobLink as Uri);
+    } else {
+      throw 'Could not launch $jobLink';
+    }
+  }
+
+  // ignore: unused_field
+  Future<void>? _launched;
+
+  Future<void> _launchInBrowser(Uri url) async {
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw Exception('Could not launch $url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -332,7 +364,7 @@ class RSSFeedItemsScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          feed.title?.toString() ?? '',
+          widget.feed.title?.toString() ?? '',
           style: kTitleStyle.copyWith(
             color: Colors.white,
             fontSize: 16,
@@ -350,7 +382,7 @@ class RSSFeedItemsScreen extends StatelessWidget {
             end: Alignment.bottomCenter,
             colors: [
               Colors.white,
-              Colors.white,
+              Color.fromARGB(255, 241, 241, 241),
               Color.fromARGB(255, 216, 216, 216),
             ],
           ),
@@ -359,17 +391,61 @@ class RSSFeedItemsScreen extends StatelessWidget {
             topRight: Radius.circular(40.0),
           ),
         ),
-        padding:
-            const EdgeInsets.only(top: 20, right: 18, bottom: 18, left: 18),
-        child: ListView.builder(
-          itemCount: feed.items?.length ?? 0,
-          itemBuilder: (BuildContext context, int index) {
-            var item = feed.items?[index];
-            return ListTile(
-              title: Text(item?.title?.toString() ?? ''),
-              subtitle: Text(item?.description?.toString() ?? ''),
-            );
-          },
+        child: Padding(
+          padding:
+              const EdgeInsets.only(top: 20, right: 15, bottom: 15, left: 15),
+          child: SingleChildScrollView(
+            child: ListView.builder(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              itemCount: widget.feed.items?.length ?? 0,
+              itemBuilder: (BuildContext context, int index) {
+                var item = widget.feed.items?[index];
+                // final Uri toLaunch = Uri(
+                //   scheme: 'https',
+                //   host: 'www.topjobs.lk',
+                //   path: 'employer/JobAdvertismentServlet',
+                //   queryParameters: {
+                //     'ac': item?.ac,
+                //     'ec': item?.ec,
+                //     'jc': item?.jc,
+                //     'pg': 'index.jsp',
+                //   },
+                // );
+                final Uri toLaunch = Uri(
+                    scheme: 'https',
+                    host: 'www.topjobs.lk',
+                    path:
+                        'employer/JobAdvertismentServlet?ac=DEFZZZ&ec=DEFZZZ&jc=0001102628&pg=index.jsp');
+                return InkWell(
+                  onTap: () => {_launched = _launchInBrowser(toLaunch)},
+                  child: Card(
+                    elevation: 0.0,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 15),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            item?.title?.toString() ?? '',
+                            style: kTitleStyle.copyWith(fontSize: 16),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text(item?.description?.toString() ?? ''),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
         ),
       ),
     );

@@ -131,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   'topjobs',
                   style: TextStyle(
                     color: Color.fromARGB(255, 119, 13, 13),
-                    fontSize: 24,
+                    fontSize: 30,
                     fontWeight: FontWeight.w500,
                     fontFamily: 'Verdana',
                   ),
@@ -141,6 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: kPageTitleStyle.copyWith(
                     fontSize: 16,
                     fontFamily: 'Verdana',
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
                 const SizedBox(
