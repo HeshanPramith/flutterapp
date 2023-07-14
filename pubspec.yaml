@@ -42,10 +42,13 @@ dependencies:
   provider: ^6.0.5
   dart_rss: ^2.0.1
   http: ^0.13.5
-  webfeed:
+  webfeed: ^0.7.0
   url_launcher: ^6.0.10
-  loading_animation_widget:
   simple_animation_transition: ^0.0.6
+  flutter_svg:
+  google_sign_in: ^6.1.4
+  flutter_custom_clippers: ^2.1.0
+  awesome_dialog: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +90,8 @@ flutter:
     - assets/company/mit.png
     - assets/company/slt.png
     - assets/company/airtel.png
+    - assets/icons/google.svg
+    - assets/icons/facebook.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

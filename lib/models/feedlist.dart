@@ -283,19 +283,20 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                                       Text(
                                         rssTitles[index],
                                         style:
-                                            kTitleStyle.copyWith(fontSize: 16),
+                                            kTitleStyle.copyWith(fontSize: 15),
                                         overflow: TextOverflow.fade,
                                         maxLines: 1,
                                         softWrap: false,
                                       ),
                                       const SizedBox(
-                                        height: 5,
+                                        height: 3,
                                       ),
                                       Text(
                                         'Jobs: ${rssCounts[index]}',
                                         style: const TextStyle(
                                           color:
-                                              Color.fromARGB(255, 15, 146, 15),
+                                              Color.fromARGB(255, 119, 13, 13),
+                                          fontWeight: FontWeight.w500,
                                         ),
                                       ),
                                     ],
@@ -475,10 +476,9 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                         //   },
                         // );
                         final Uri toLaunch = Uri(
-                            scheme: 'https',
+                            scheme: 'http',
                             host: 'www.topjobs.lk',
-                            path:
-                                'employer/JobAdvertismentServlet?ac=DEFZZZ&ec=DEFZZZ&jc=0001102628&pg=index.jsp');
+                            path: '/index.jsp');
                         return InkWell(
                           onTap: () => {_launched = _launchInBrowser(toLaunch)},
                           child: Card(
@@ -492,7 +492,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                 children: [
                                   Text(
                                     item.title?.toString() ?? '',
-                                    style: kTitleStyle.copyWith(fontSize: 16),
+                                    style: kTitleStyle.copyWith(fontSize: 15),
                                   ),
                                   const SizedBox(
                                     height: 5,

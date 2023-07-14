@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  awesome_dialog:
+    dependency: "direct main"
+    description:
+      name: awesome_dialog
+      sha256: "7da175ea284fa5da0a4d0cbdfe835c5b71d30c7b38c1770c0f27f48272ff5a08"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -102,6 +110,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_custom_clippers:
+    dependency: "direct main"
+    description:
+      name: flutter_custom_clippers
+      sha256: "473e3daf61c2a6cee0ad137393259a25223239d519a131c7ec1cac04d06e5407"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -110,6 +126,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
+  flutter_svg:
+    dependency: "direct main"
+    description:
+      name: flutter_svg
+      sha256: c9bb2757b8a0bbf8e45f4069a90d2b9dbafc80b1a5e28d43e29088be533e6df4
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -136,6 +160,62 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.4"
+  google_identity_services_web:
+    dependency: transitive
+    description:
+      name: google_identity_services_web
+      sha256: "7940fdc3b1035db4d65d387c1bdd6f9574deaa6777411569c05ecc25672efacd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1"
+  google_sign_in:
+    dependency: "direct main"
+    description:
+      name: google_sign_in
+      sha256: aab6fdc41374014494f9e9026b9859e7309639d50a0bf4a2a412467a5ae4abc6
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.4"
+  google_sign_in_android:
+    dependency: transitive
+    description:
+      name: google_sign_in_android
+      sha256: "8d60a787b29cb7d2bcf29230865f4a91f17323c6ac5b6b9027a6418e48d9ffc3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.18"
+  google_sign_in_ios:
+    dependency: transitive
+    description:
+      name: google_sign_in_ios
+      sha256: "6ec0e13a4c5c646471b9f6a25ceb3ae76d339889d4c0f79b729bf0714215a63e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.6.2"
+  google_sign_in_platform_interface:
+    dependency: transitive
+    description:
+      name: google_sign_in_platform_interface
+      sha256: e69553c0fc6a76216e9d06a8c3767e291ad9be42171f879aab7ab708569d4393
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.1"
+  google_sign_in_web:
+    dependency: transitive
+    description:
+      name: google_sign_in_web
+      sha256: "69b9ce0e760945ff52337921a8b5871592b74c92f85e7632293310701eea68cc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.12.0+2"
+  graphs:
+    dependency: transitive
+    description:
+      name: graphs
+      sha256: aedc5a15e78fc65a6e23bcd927f24c64dd995062bcd1ca6eda65a3cff92a4d19
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.1"
   http:
     dependency: "direct main"
     description:
@@ -176,14 +256,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  loading_animation_widget:
-    dependency: "direct main"
-    description:
-      name: loading_animation_widget
-      sha256: "1901682600273a966c34cf44a85fc5355da92a8d08a8a43c11adc4e471993e3a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.0+4"
   matcher:
     dependency: transitive
     description:
@@ -232,6 +304,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  path_drawing:
+    dependency: transitive
+    description:
+      name: path_drawing
+      sha256: bbb1934c0cbb03091af082a6389ca2080345291ef07a5fa6d6e078ba8682f977
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
+  path_parsing:
+    dependency: transitive
+    description:
+      name: path_parsing
+      sha256: e3e67b1629e6f7e8100b367d3db6ba6af4b1f0bb80f64db18ef1fbabd2fa9ccf
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   path_provider:
     dependency: transitive
     description:
@@ -320,6 +408,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.5"
+  quiver:
+    dependency: transitive
+    description:
+      name: quiver
+      sha256: b1c1ac5ce6688d77f65f3375a9abb9319b3cb32486bdc7a1e0fdf004d7ba4e47
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.1"
+  rive:
+    dependency: transitive
+    description:
+      name: rive
+      sha256: f3b8af0898c987d68019e91d92257edd902c28c816e49de033a7272e86bd5425
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.11.4"
+  rive_common:
+    dependency: transitive
+    description:
+      name: rive_common
+      sha256: f6687f9d70e6fd3888a9b0e9c0b307966d2ce74cf00cfb01dce906c3bbada52f
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0"
   simple_animation_transition:
     dependency: "direct main"
     description:

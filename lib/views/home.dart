@@ -7,6 +7,7 @@ import 'package:topjobs/models/categories.dart';
 import 'package:topjobs/models/feedlist.dart';
 import 'package:topjobs/models/hotjobs.dart';
 import 'package:topjobs/views/job_detail.dart';
+import 'package:topjobs/welcomepage.dart';
 import 'package:topjobs/widgets/popular_card.dart';
 import 'package:topjobs/widgets/popular_card2.dart';
 
@@ -53,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: const Color.fromARGB(255, 119, 13, 13),
         appBar: AppBar(
           systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Color.fromARGB(255, 119, 13, 13), // <-- SEE HERE
+            statusBarColor: Color.fromARGB(0, 0, 0, 0),
             statusBarIconBrightness:
                 Brightness.light, //<-- For Android SEE HERE (dark icons)
             statusBarBrightness:
@@ -99,6 +100,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     type: PageTransitionType.fade,
                     duration: const Duration(milliseconds: 100),
                     child: const MyHomePage(),
+                  ),
+                );
+              },
+            ),
+            IconButton(
+              icon: const FaIcon(FontAwesomeIcons.rightFromBracket),
+              color: Colors.white,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: const Duration(milliseconds: 100),
+                    child: const WelcomePage(),
                   ),
                 );
               },
