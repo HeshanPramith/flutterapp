@@ -1,4 +1,4 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
+// import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
@@ -556,60 +556,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          actions: [
-            Column(
-              children: [
-                AnimatedButton(
-                  height: double.infinity,
-                  text: 'Submit',
-                  width: 100.0,
-                  borderRadius: BorderRadius.circular(
-                    5.0,
-                  ),
-                  color: const Color.fromARGB(255, 17, 155, 51),
-                  pressEvent: () {
-                    AwesomeDialog(
-                      context: context,
-                      animType: AnimType.scale,
-                      headerAnimationLoop: false,
-                      dialogType: DialogType.success,
-                      showCloseIcon: false,
-                      title: 'Succes',
-                      autoHide: const Duration(seconds: 4),
-                      body: Container(
-                        alignment: Alignment.center,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 30.0,
-                              ),
-                              child: Column(
-                                children: [
-                                  const Text('Please check your email'),
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: const Text('Cancel'),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      onDismissCallback: (type) {
-                        Navigator.of(context).pop();
-                      },
-                    ).show();
-                  },
-                ),
-              ],
-            )
-          ],
         ),
       );
 }

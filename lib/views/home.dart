@@ -8,6 +8,8 @@ import 'package:topjobs/models/feedlist.dart';
 import 'package:topjobs/models/hotjobs.dart';
 import 'package:topjobs/views/job_detail.dart';
 import 'package:topjobs/welcomepage.dart';
+import 'package:topjobs/widgets/drawer_content.dart';
+import 'package:topjobs/widgets/drawer_header.dart';
 import 'package:topjobs/widgets/popular_card.dart';
 import 'package:topjobs/widgets/popular_card2.dart';
 
@@ -62,12 +64,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           elevation: 0.0,
           backgroundColor: const Color.fromARGB(255, 233, 233, 233),
-          leading: IconButton(
-              onPressed: () {},
-              icon: const FaIcon(
-                FontAwesomeIcons.barsStaggered,
-                color: Colors.white,
-              )),
+          // leading: IconButton(
+          //   onPressed: () {},
+          //   icon: const FaIcon(
+          //     FontAwesomeIcons.barsStaggered,
+          //     color: Colors.white,
+          //   ),
+          // ),
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -93,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.arrowRotateRight),
               color: Colors.white,
+              iconSize: 18,
               onPressed: () {
                 Navigator.push(
                   context,
@@ -107,6 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.rightFromBracket),
               color: Colors.white,
+              iconSize: 18,
               onPressed: () {
                 Navigator.push(
                   context,
@@ -356,6 +361,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
               ],
+            ),
+          ),
+        ),
+        drawer: Drawer(
+          child: SingleChildScrollView(
+            child: Container(
+              alignment: Alignment.center,
+              width: double.infinity,
+              child: const Column(children: [
+                TjDrawerHeader(),
+                TjDrawerContent(),
+              ]),
             ),
           ),
         ),
