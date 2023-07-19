@@ -11,7 +11,16 @@ class _TjDrawerHeaderState extends State<TjDrawerHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 119, 13, 13),
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color.fromARGB(255, 0, 0, 0),
+            Color.fromARGB(255, 119, 13, 13),
+          ],
+        ),
+      ),
       width: double.infinity,
       height: 200.0,
       padding: const EdgeInsets.only(top: 20.0),

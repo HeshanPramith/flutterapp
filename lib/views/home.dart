@@ -29,14 +29,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void updateList(String value) {
     //Filter our list
-    setState(() {
-      hotjobList = Hotjobs.hotjobList
-          .where(
-            (element) =>
-                element.description.toLowerCase().contains(value.toLowerCase()),
-          )
-          .toList();
-    });
+    setState(
+      () {
+        hotjobList = Hotjobs.hotjobList
+            .where(
+              (element) => element.description.toLowerCase().contains(
+                    value.toLowerCase(),
+                  ),
+            )
+            .toList();
+      },
+    );
   }
 
   hideKeyboard() {
@@ -64,13 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           elevation: 0.0,
           backgroundColor: const Color.fromARGB(255, 233, 233, 233),
-          // leading: IconButton(
-          //   onPressed: () {},
-          //   icon: const FaIcon(
-          //     FontAwesomeIcons.barsStaggered,
-          //     color: Colors.white,
-          //   ),
-          // ),
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -122,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 );
               },
-            )
+            ),
           ],
         ),
         body: Container(
@@ -365,14 +361,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         drawer: Drawer(
+          elevation: 0,
           child: SingleChildScrollView(
             child: Container(
               alignment: Alignment.center,
               width: double.infinity,
-              child: const Column(children: [
-                TjDrawerHeader(),
-                TjDrawerContent(),
-              ]),
+              child: const Column(
+                children: [
+                  TjDrawerHeader(),
+                  TjDrawerContent(),
+                ],
+              ),
             ),
           ),
         ),

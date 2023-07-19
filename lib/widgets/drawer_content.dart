@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:topjobs/views/home.dart';
+import 'package:topjobs/views/myaccount.dart';
 
 class TjDrawerContent extends StatefulWidget {
-  const TjDrawerContent({super.key});
+  const TjDrawerContent({Key? key}) : super(key: key);
 
   @override
-  State<TjDrawerContent> createState() => _TjDrawerContentState();
+  // ignore: library_private_types_in_public_api
+  _TjDrawerContentState createState() => _TjDrawerContentState();
 }
 
 class _TjDrawerContentState extends State<TjDrawerContent> {
@@ -20,7 +23,14 @@ class _TjDrawerContentState extends State<TjDrawerContent> {
       child: Column(
         children: [
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MyHomePage(),
+                ),
+              );
+            },
             child: const Padding(
               padding: EdgeInsets.symmetric(
                 vertical: 10.0,
@@ -29,13 +39,14 @@ class _TjDrawerContentState extends State<TjDrawerContent> {
               child: Row(
                 children: [
                   Icon(
-                    FontAwesomeIcons.box,
+                    FontAwesomeIcons.house,
+                    size: 18.0,
                   ),
                   SizedBox(
                     width: 10.0,
                   ),
                   Text(
-                    'Dashboard',
+                    'Home',
                     style: TextStyle(
                       fontSize: 16.0,
                     ),
@@ -45,7 +56,14 @@ class _TjDrawerContentState extends State<TjDrawerContent> {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Myaccount(),
+                ),
+              );
+            },
             child: const Padding(
               padding: EdgeInsets.symmetric(
                 vertical: 10.0,
@@ -55,10 +73,10 @@ class _TjDrawerContentState extends State<TjDrawerContent> {
                 children: [
                   Icon(
                     FontAwesomeIcons.userShield,
-                    size: 18.0,
+                    size: 15.0,
                   ),
                   SizedBox(
-                    width: 16.0,
+                    width: 14.0,
                   ),
                   Text(
                     'My Account',
@@ -81,6 +99,7 @@ class _TjDrawerContentState extends State<TjDrawerContent> {
                 children: [
                   Icon(
                     FontAwesomeIcons.gear,
+                    size: 18.0,
                   ),
                   SizedBox(
                     width: 10.0,
