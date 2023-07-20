@@ -124,18 +124,20 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Container(
           height: double.infinity,
           decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.white,
-                  Colors.white,
-                  Color.fromARGB(255, 216, 216, 216),
-                ],
-              ),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40.0),
-                  topRight: Radius.circular(40.0))),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.white,
+                Colors.white,
+                Color.fromARGB(255, 216, 216, 216),
+              ],
+            ),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40.0),
+              topRight: Radius.circular(40.0),
+            ),
+          ),
           padding:
               const EdgeInsets.only(top: 20, right: 15, bottom: 18, left: 15),
           child: SingleChildScrollView(
