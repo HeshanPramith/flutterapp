@@ -489,19 +489,23 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                             elevation: 0.0,
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 15),
+                                vertical: 0.0,
+                                horizontal: 15,
+                              ),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    title,
-                                    style: kTitleStyle.copyWith(fontSize: 15),
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  ListTile(
+                                    minLeadingWidth: 20,
+                                    contentPadding: const EdgeInsets.all(0),
+                                    trailing: const Icon(
+                                      Icons.arrow_forward_outlined,
+                                      color: Colors.green,
+                                    ),
+                                    title: Text(title),
+                                    subtitle: Text(
+                                        item.description?.toString() ?? ''),
                                   ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(item.description?.toString() ?? ''),
                                 ],
                               ),
                             ),
