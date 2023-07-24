@@ -65,14 +65,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
-  dart_rss:
-    dependency: "direct main"
-    description:
-      name: dart_rss
-      sha256: "6ceb177365ae54d054eb162dda4af9383e254f0fd249d81288452c0e9f99ac76"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -129,14 +121,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.3"
-  floating_text:
-    dependency: "direct main"
-    description:
-      name: floating_text
-      sha256: "1ede67c2757fc5250a3aeed2ff4d01e0b37db275dc38c02997e34a13a8125aa2"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -288,14 +272,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.7"
-  lecle_bubble_timeline:
-    dependency: "direct main"
-    description:
-      name: lecle_bubble_timeline
-      sha256: "21b84904801d8d64d43fd532923ee232a25bed86d4c2fd2af7fc25e2973bcb79"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.1+1"
   lints:
     dependency: transitive
     description:
