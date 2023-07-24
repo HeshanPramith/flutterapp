@@ -17,37 +17,37 @@ class RSSFeedScreen extends StatefulWidget {
 
 class _RSSFeedScreenState extends State<RSSFeedScreen> {
   List<String> rssUrls = [
-    'http://100.100.100.198/rss/it_sware_db_qa_web_graphics_gis.rss',
-    'http://100.100.100.198/rss/it_hware_networks_systems.rss',
-    'http://100.100.100.198/rss/accounting_auditing_finance.rss',
-    'http://100.100.100.198/rss/banking_insurance.rss',
-    'http://100.100.100.198/rss/sales_marketing_merchandising.rss',
-    'http://100.100.100.198/rss/hr_training.rss',
-    'http://100.100.100.198/rss/corporate_management_analysts.rss',
-    'http://100.100.100.198/rss/office_admin_secretary_receptionist.rss',
-    'http://100.100.100.198/rss/civil_eng_interior_design_architecture.rss',
-    'http://100.100.100.198/rss/it_telecoms.rss',
-    'http://100.100.100.198/rss/customer_relations_public_relations.rss',
-    'http://100.100.100.198/rss/logistics_warehouse_transport.rss',
-    'http://100.100.100.198/rss/eng_mech_auto_elec.rss',
-    'http://100.100.100.198/rss/manufacturing_operations.rss',
-    'http://100.100.100.198/rss/media_advert_communication.rss',
-    'http://100.100.100.198/rss/hotels_restaurants_food.rss',
-    'http://100.100.100.198/rss/hospitality_tourism.rss',
-    'http://100.100.100.198/rss/sports_fitness_recreation.rss',
-    'http://100.100.100.198/rss/hospital_nursing_healthcare.rss',
-    'http://100.100.100.198/rss/legal_law.rss',
-    'http://100.100.100.198/rss/supervision_quality_control.rss',
-    'http://100.100.100.198/rss/apparel_clothing.rss',
-    'http://100.100.100.198/rss/ticketing_airline_marine.rss',
-    'http://100.100.100.198/rss/teaching_academic_library.rss',
-    'http://100.100.100.198/rss/rnd_science_research.rss',
-    'http://100.100.100.198/rss/agriculture_dairy_environment.rss',
-    'http://100.100.100.198/rss/security.rss',
-    'http://100.100.100.198/rss/fashion_design_beauty.rss',
-    'http://100.100.100.198/rss/international_development.rss',
-    'http://100.100.100.198/rss/kpo_bpo.rss',
-    'http://100.100.100.198/rss/imports_exports.rss'
+    'http://123.231.114.194:7070/rss/it_sware_db_qa_web_graphics_gis.rss',
+    'http://123.231.114.194:7070/rss/it_hware_networks_systems.rss',
+    'http://123.231.114.194:7070/rss/accounting_auditing_finance.rss',
+    'http://123.231.114.194:7070/rss/banking_insurance.rss',
+    'http://123.231.114.194:7070/rss/sales_marketing_merchandising.rss',
+    'http://123.231.114.194:7070/rss/hr_training.rss',
+    'http://123.231.114.194:7070/rss/corporate_management_analysts.rss',
+    'http://123.231.114.194:7070/rss/office_admin_secretary_receptionist.rss',
+    'http://123.231.114.194:7070/rss/civil_eng_interior_design_architecture.rss',
+    'http://123.231.114.194:7070/rss/it_telecoms.rss',
+    'http://123.231.114.194:7070/rss/customer_relations_public_relations.rss',
+    'http://123.231.114.194:7070/rss/logistics_warehouse_transport.rss',
+    'http://123.231.114.194:7070/rss/eng_mech_auto_elec.rss',
+    'http://123.231.114.194:7070/rss/manufacturing_operations.rss',
+    'http://123.231.114.194:7070/rss/media_advert_communication.rss',
+    'http://123.231.114.194:7070/rss/hotels_restaurants_food.rss',
+    'http://123.231.114.194:7070/rss/hospitality_tourism.rss',
+    'http://123.231.114.194:7070/rss/sports_fitness_recreation.rss',
+    'http://123.231.114.194:7070/rss/hospital_nursing_healthcare.rss',
+    'http://123.231.114.194:7070/rss/legal_law.rss',
+    'http://123.231.114.194:7070/rss/supervision_quality_control.rss',
+    'http://123.231.114.194:7070/rss/apparel_clothing.rss',
+    'http://123.231.114.194:7070/rss/ticketing_airline_marine.rss',
+    'http://123.231.114.194:7070/rss/teaching_academic_library.rss',
+    'http://123.231.114.194:7070/rss/rnd_science_research.rss',
+    'http://123.231.114.194:7070/rss/agriculture_dairy_environment.rss',
+    'http://123.231.114.194:7070/rss/security.rss',
+    'http://123.231.114.194:7070/rss/fashion_design_beauty.rss',
+    'http://123.231.114.194:7070/rss/international_development.rss',
+    'http://123.231.114.194:7070/rss/kpo_bpo.rss',
+    'http://123.231.114.194:7070/rss/imports_exports.rss'
   ];
 
   List<String> rssTitles = [
@@ -90,37 +90,37 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
   void initState() {
     super.initState();
     rssUrls = [
-      'http://100.100.100.198/rss/it_sware_db_qa_web_graphics_gis.rss',
-      'http://100.100.100.198/rss/it_hware_networks_systems.rss',
-      'http://100.100.100.198/rss/accounting_auditing_finance.rss',
-      'http://100.100.100.198/rss/banking_insurance.rss',
-      'http://100.100.100.198/rss/sales_marketing_merchandising.rss',
-      'http://100.100.100.198/rss/hr_training.rss',
-      'http://100.100.100.198/rss/corporate_management_analysts.rss',
-      'http://100.100.100.198/rss/office_admin_secretary_receptionist.rss',
-      'http://100.100.100.198/rss/civil_eng_interior_design_architecture.rss',
-      'http://100.100.100.198/rss/it_telecoms.rss',
-      'http://100.100.100.198/rss/customer_relations_public_relations.rss',
-      'http://100.100.100.198/rss/logistics_warehouse_transport.rss',
-      'http://100.100.100.198/rss/eng_mech_auto_elec.rss',
-      'http://100.100.100.198/rss/manufacturing_operations.rss',
-      'http://100.100.100.198/rss/media_advert_communication.rss',
-      'http://100.100.100.198/rss/hotels_restaurants_food.rss',
-      'http://100.100.100.198/rss/hospitality_tourism.rss',
-      'http://100.100.100.198/rss/sports_fitness_recreation.rss',
-      'http://100.100.100.198/rss/hospital_nursing_healthcare.rss',
-      'http://100.100.100.198/rss/legal_law.rss',
-      'http://100.100.100.198/rss/supervision_quality_control.rss',
-      'http://100.100.100.198/rss/apparel_clothing.rss',
-      'http://100.100.100.198/rss/ticketing_airline_marine.rss',
-      'http://100.100.100.198/rss/teaching_academic_library.rss',
-      'http://100.100.100.198/rss/rnd_science_research.rss',
-      'http://100.100.100.198/rss/agriculture_dairy_environment.rss',
-      'http://100.100.100.198/rss/security.rss',
-      'http://100.100.100.198/rss/fashion_design_beauty.rss',
-      'http://100.100.100.198/rss/international_development.rss',
-      'http://100.100.100.198/rss/kpo_bpo.rss',
-      'http://100.100.100.198/rss/imports_exports.rss'
+      'http://123.231.114.194:7070/rss/it_sware_db_qa_web_graphics_gis.rss',
+      'http://123.231.114.194:7070/rss/it_hware_networks_systems.rss',
+      'http://123.231.114.194:7070/rss/accounting_auditing_finance.rss',
+      'http://123.231.114.194:7070/rss/banking_insurance.rss',
+      'http://123.231.114.194:7070/rss/sales_marketing_merchandising.rss',
+      'http://123.231.114.194:7070/rss/hr_training.rss',
+      'http://123.231.114.194:7070/rss/corporate_management_analysts.rss',
+      'http://123.231.114.194:7070/rss/office_admin_secretary_receptionist.rss',
+      'http://123.231.114.194:7070/rss/civil_eng_interior_design_architecture.rss',
+      'http://123.231.114.194:7070/rss/it_telecoms.rss',
+      'http://123.231.114.194:7070/rss/customer_relations_public_relations.rss',
+      'http://123.231.114.194:7070/rss/logistics_warehouse_transport.rss',
+      'http://123.231.114.194:7070/rss/eng_mech_auto_elec.rss',
+      'http://123.231.114.194:7070/rss/manufacturing_operations.rss',
+      'http://123.231.114.194:7070/rss/media_advert_communication.rss',
+      'http://123.231.114.194:7070/rss/hotels_restaurants_food.rss',
+      'http://123.231.114.194:7070/rss/hospitality_tourism.rss',
+      'http://123.231.114.194:7070/rss/sports_fitness_recreation.rss',
+      'http://123.231.114.194:7070/rss/hospital_nursing_healthcare.rss',
+      'http://123.231.114.194:7070/rss/legal_law.rss',
+      'http://123.231.114.194:7070/rss/supervision_quality_control.rss',
+      'http://123.231.114.194:7070/rss/apparel_clothing.rss',
+      'http://123.231.114.194:7070/rss/ticketing_airline_marine.rss',
+      'http://123.231.114.194:7070/rss/teaching_academic_library.rss',
+      'http://123.231.114.194:7070/rss/rnd_science_research.rss',
+      'http://123.231.114.194:7070/rss/agriculture_dairy_environment.rss',
+      'http://123.231.114.194:7070/rss/security.rss',
+      'http://123.231.114.194:7070/rss/fashion_design_beauty.rss',
+      'http://123.231.114.194:7070/rss/international_development.rss',
+      'http://123.231.114.194:7070/rss/kpo_bpo.rss',
+      'http://123.231.114.194:7070/rss/imports_exports.rss'
     ];
     rssCounts = List<int>.filled(rssUrls.length, 0);
     fetchRSSCounts();
@@ -453,7 +453,11 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      top: 15, right: 12, bottom: 15, left: 12),
+                    top: 15,
+                    right: 12,
+                    bottom: 15,
+                    left: 12,
+                  ),
                   child: SingleChildScrollView(
                     child: ListView.builder(
                       keyboardDismissBehavior:
@@ -464,9 +468,14 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                       itemCount: filteredItems.length,
                       itemBuilder: (BuildContext context, int index) {
                         var item = filteredItems[index];
+                        String title = item.title?.toString() ?? '';
+                        //title = title.replaceAll(RegExp(r'[0-9]'), '');
+                        //title = title.replaceAll('-', '');
+                        title = title.trim().replaceAll(RegExp(r'\s+'), ' ');
                         final Uri toLaunch = Uri(
                           scheme: 'http',
-                          host: '100.100.100.198',
+                          host: '123.231.114.194',
+                          port: 7070,
                           path: 'employer/JobAdvertismentServlet',
                           queryParameters: {
                             'ac': item.author,
@@ -474,10 +483,6 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                             'ec': item.guid,
                           },
                         );
-                        // final Uri toLaunch = Uri(
-                        //     scheme: 'http',
-                        //     host: '100.100.100.198',
-                        //     path: '/index.jsp');
                         return InkWell(
                           onTap: () => {_launched = _launchInBrowser(toLaunch)},
                           child: Card(
@@ -490,16 +495,13 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    item.title?.toString() ?? '',
+                                    title,
                                     style: kTitleStyle.copyWith(fontSize: 15),
                                   ),
                                   const SizedBox(
                                     height: 5,
                                   ),
                                   Text(item.description?.toString() ?? ''),
-                                  Text(item.author?.toString() ?? ''),
-                                  Text(item.guid?.toString() ?? ''),
-                                  Text(item.comments?.toString() ?? ''),
                                 ],
                               ),
                             ),
