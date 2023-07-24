@@ -470,7 +470,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                         var item = filteredItems[index];
                         String title = item.title?.toString() ?? '';
                         //title = title.replaceAll(RegExp(r'[0-9]'), '');
-                        //title = title.replaceAll('-', '');
+                        //title = title.replaceAll('-', '⦁');
                         title = title.trim().replaceAll(RegExp(r'\s+'), ' ');
                         final Uri toLaunch = Uri(
                           scheme: 'http',
