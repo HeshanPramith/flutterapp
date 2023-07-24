@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:topjobs/views/home.dart';
-import 'package:topjobs/views/myaccount.dart';
+import 'package:topjobs/views/myprofile.dart';
 
 class TjDrawerContent extends StatefulWidget {
   const TjDrawerContent({Key? key}) : super(key: key);
@@ -79,33 +79,7 @@ class _TjDrawerContentState extends State<TjDrawerContent> {
                     width: 14.0,
                   ),
                   Text(
-                    'My Account',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {},
-            child: const Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: 10.0,
-                horizontal: 15.0,
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    FontAwesomeIcons.gear,
-                    size: 18.0,
-                  ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    'Settings',
+                    'My Profile',
                     style: TextStyle(
                       fontSize: 16.0,
                     ),

@@ -4,7 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:topjobs/views/experience.dart';
+import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
+import 'package:topjobs/views/account_data.dart';
 import 'package:topjobs/welcomepage.dart';
 import 'package:topjobs/widgets/drawer_content.dart';
 import 'package:topjobs/widgets/drawer_header.dart';
@@ -39,7 +40,7 @@ class _MyaccountState extends State<Myaccount> {
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: const Color.fromARGB(255, 119, 13, 13),
-          title: const Text('My Account'),
+          title: const Text('My Profile'),
           centerTitle: true,
           actions: [
             IconButton(
@@ -69,7 +70,7 @@ class _MyaccountState extends State<Myaccount> {
               colors: [
                 Colors.white,
                 Colors.white,
-                Colors.white,
+                Color.fromARGB(255, 216, 216, 216),
               ],
             ),
             borderRadius: BorderRadius.only(
@@ -124,7 +125,71 @@ class _MyaccountState extends State<Myaccount> {
                   ],
                 ),
               ),
-              const Experience(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      top: 15.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(
+                            bottom: 5.0,
+                            left: 15.0,
+                            right: 15.0,
+                          ),
+                          child: Text.rich(
+                            TextSpan(
+                              text: 'Complete Your Profile ',
+                              children: <InlineSpan>[
+                                TextSpan(
+                                  text: '(1/4)',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15.0,
+                          ),
+                          child: SimpleAnimationProgressBar(
+                            height: 15,
+                            width: MediaQuery.of(context).size.width,
+                            backgroundColor:
+                                const Color.fromARGB(255, 199, 199, 199),
+                            foregrondColor:
+                                const Color.fromARGB(255, 24, 204, 69),
+                            ratio: 0.5,
+                            direction: Axis.horizontal,
+                            curve: Curves.slowMiddle,
+                            duration: const Duration(seconds: 3),
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.pink,
+                                offset: Offset(
+                                  0.0,
+                                  0.0,
+                                ),
+                                blurRadius: 0.0,
+                                spreadRadius: 0.0,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Experience(),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -169,7 +234,7 @@ class _MyaccountState extends State<Myaccount> {
               radius: 50.0,
               backgroundImage: _imageFile?.path != null
                   ? FileImage(File(_imageFile!.path)) as ImageProvider<Object>?
-                  : const AssetImage('assets/images/user.jpg'),
+                  : const AssetImage('assets/images/user2.jpg'),
             ),
           ),
         ),
@@ -204,6 +269,8 @@ class _MyaccountState extends State<Myaccount> {
       setState(() {
         _imageFile = pickedImage;
       });
+      // ignore: use_build_context_synchronously
+      Navigator.pop(context);
     }
   }
 

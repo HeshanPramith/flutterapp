@@ -48,6 +48,7 @@ dependencies:
   flutter_svg:
   image_picker: ^1.0.1
   lecle_bubble_timeline: ^0.0.1
+  simple_animation_progress_bar: ^1.6.0
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
   assets:
     - assets/images/bg.jpg
     - assets/images/user.jpg
+    - assets/images/user2.jpg
     - assets/logo/logo.png
     - assets/banners/banner1.png
     - assets/banners/banner2.png

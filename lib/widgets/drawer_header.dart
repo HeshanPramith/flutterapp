@@ -31,9 +31,11 @@ class _TjDrawerHeaderState extends State<TjDrawerHeader> {
             margin: const EdgeInsets.only(bottom: 10.0),
             height: 80.0,
             decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                    image: AssetImage('assets/images/user.jpg'))),
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: AssetImage('assets/images/user2.jpg'),
+              ),
+            ),
           ),
           const Text(
             'Heshan Pramith',
