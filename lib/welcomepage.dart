@@ -3,8 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:simple_animation_transition/simple_animation_transition.dart';
-import 'package:topjobs/login.dart';
-import 'package:topjobs/views/home.dart';
+// import 'package:topjobs/login.dart';
+import 'package:topjobs/models/feedlist.dart';
+// import 'package:topjobs/views/home.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -85,8 +86,40 @@ class _WelcomePageState extends State<WelcomePage> {
                 left: 18.0,
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  // SizedBox(
+                  //   width: 160.0,
+                  //   height: 50.0,
+                  //   child: ElevatedButton(
+                  //     onPressed: () {
+                  //       Navigator.push(
+                  //         context,
+                  //         PageTransition(
+                  //           type: PageTransitionType.fade,
+                  //           duration: const Duration(milliseconds: 200),
+                  //           child: const LoginPage(),
+                  //         ),
+                  //       );
+                  //     },
+                  //     style: ElevatedButton.styleFrom(
+                  //       foregroundColor: Colors.white,
+                  //       backgroundColor: const Color.fromARGB(255, 52, 177, 14),
+                  //     ),
+                  //     child: const Row(
+                  //       mainAxisSize: MainAxisSize.min,
+                  //       children: [
+                  //         Text('Sign In'),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+                  // const SizedBox(
+                  //   child: Text(
+                  //     'OR',
+                  //     style: TextStyle(color: Colors.white),
+                  //   ),
+                  // ),
                   SizedBox(
                     width: 160.0,
                     height: 50.0,
@@ -97,45 +130,13 @@ class _WelcomePageState extends State<WelcomePage> {
                           PageTransition(
                             type: PageTransitionType.fade,
                             duration: const Duration(milliseconds: 200),
-                            child: const LoginPage(),
+                            child: const RSSFeedScreen(),
                           ),
                         );
                       },
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
-                        backgroundColor: const Color.fromARGB(255, 52, 177, 14),
-                      ),
-                      child: const Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text('Sign In'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    child: Text(
-                      'OR',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 160.0,
-                    height: 50.0,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.fade,
-                            duration: const Duration(milliseconds: 200),
-                            child: const MyHomePage(),
-                          ),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: const Color.fromARGB(255, 189, 17, 17),
+                        backgroundColor: const Color.fromARGB(255, 21, 177, 15),
                       ),
                       child: const Row(
                         mainAxisSize: MainAxisSize.min,
