@@ -489,7 +489,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                             elevation: 0.0,
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
-                                vertical: 0.0,
+                                vertical: 5.0,
                                 horizontal: 15,
                               ),
                               child: Column(
@@ -498,13 +498,62 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                   ListTile(
                                     minLeadingWidth: 20,
                                     contentPadding: const EdgeInsets.all(0),
-                                    trailing: const Icon(
-                                      Icons.arrow_forward_outlined,
-                                      color: Colors.green,
+                                    trailing: const Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: 18.0,
+                                      ),
+                                      child: Icon(
+                                        Icons.arrow_forward_outlined,
+                                        color: Colors.green,
+                                      ),
                                     ),
-                                    title: Text(title),
-                                    subtitle: Text(
-                                        item.description?.toString() ?? ''),
+                                    title: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(title),
+                                      ],
+                                    ),
+                                    subtitle: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const SizedBox(
+                                          height: 5.0,
+                                        ),
+                                        Text(
+                                            item.description?.toString() ?? ''),
+                                        const SizedBox(
+                                          height: 5.0,
+                                        ),
+                                        Text(
+                                          item.dc?.creator ?? '',
+                                          style: const TextStyle(
+                                            fontSize: 14.0,
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 5.0,
+                                        ),
+                                        Text.rich(
+                                          TextSpan(
+                                            text: '${item.dc?.coverage} ⦁ ',
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                text: '${item.dc?.rights}',
+                                                style: const TextStyle(
+                                                  color: Colors.green,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
