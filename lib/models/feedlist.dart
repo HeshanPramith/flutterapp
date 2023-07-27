@@ -50,38 +50,47 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
     'http://123.231.114.194:7070/rss/imports_exports.rss'
   ];
 
-  List<String> rssTitles = [
-    'IT-Sware/DB/QA/Web/Graphics/GIS',
-    'IT-HWare/Networks/Systems',
-    'Accounting/Auditing/Finance',
-    'Banking/Insurance',
-    'Sales/Marketing/Merchandising',
-    'HR/Training',
-    'Corporate Management/Analysts',
-    'Office Admin/Secretary/Receptionist',
-    'Civil Eng/Interior Design/Architecture',
-    'IT-Telecoms',
-    'Customer Relations/Public Relations',
-    'Logistics/Warehouse/Transport',
-    'Eng-Mech/Auto/Elec',
-    'Manufacturing/Operations',
-    'Media/Advert/Communication',
-    'Hotels/Restaurants/Food',
-    'Hospitality/Tourism',
-    'Sports/Fitness/Recreation',
-    'Hospital/Nursing/Healthcare',
-    'Legal/Law',
-    'Supervision/Quality Control',
-    'Apparel/Clothing',
-    'Ticketing/Airline/Marine',
-    'Teaching/Academic/Library',
-    'R&D/Science/Research',
-    'Agriculture/Dairy/Environment',
-    'Security',
-    'Fashion/Design/Beauty',
-    'International Development',
-    'KPO/BPO',
-    'Imports/Exports',
+  List<Map<String, dynamic>> rssTitles = [
+    {'title': 'IT-Sware/DB/QA/Web/Graphics/GIS', 'icon': Icons.design_services},
+    {'title': 'IT-HWare/Networks/Systems', 'icon': Icons.network_wifi},
+    {'title': 'Accounting/Auditing/Finance', 'icon': Icons.account_balance},
+    {'title': 'Banking/Insurance', 'icon': Icons.money},
+    {'title': 'Sales/Marketing/Merchandising', 'icon': Icons.shopify},
+    {'title': 'HR/Training', 'icon': Icons.people},
+    {'title': 'Corporate Management/Analysts', 'icon': Icons.pie_chart},
+    {
+      'title': 'Office Admin/Secretary/Receptionist',
+      'icon': Icons.admin_panel_settings
+    },
+    {
+      'title': 'Civil Eng/Interior Design/Architecture',
+      'icon': Icons.house_siding
+    },
+    {'title': 'IT-Telecoms', 'icon': Icons.phone},
+    {
+      'title': 'Customer Relations/Public Relations',
+      'icon': Icons.verified_user
+    },
+    {'title': 'Logistics/Warehouse/Transport', 'icon': Icons.car_rental},
+    {'title': 'Eng-Mech/Auto/Elec', 'icon': Icons.tv},
+    {'title': 'Manufacturing/Operations', 'icon': Icons.gif_box},
+    {'title': 'Media/Advert/Communication', 'icon': Icons.video_camera_back},
+    {'title': 'Hotels/Restaurants/Food', 'icon': Icons.hotel},
+    {'title': 'Hospitality/Tourism', 'icon': Icons.directions_boat},
+    {'title': 'Sports/Fitness/Recreation', 'icon': Icons.sports_gymnastics},
+    {'title': 'Hospital/Nursing/Healthcare', 'icon': Icons.local_hospital},
+    {'title': 'Legal/Law', 'icon': Icons.local_library},
+    {'title': 'Supervision/Quality Control', 'icon': Icons.check_circle},
+    {'title': 'Apparel/Clothing', 'icon': Icons.checkroom},
+    {'title': 'Ticketing/Airline/Marine', 'icon': Icons.airplane_ticket},
+    {'title': 'Teaching/Academic/Library', 'icon': Icons.library_add},
+    {'title': 'R&D/Science/Research', 'icon': Icons.hourglass_bottom},
+    {'title': 'Agriculture/Dairy/Environment', 'icon': Icons.computer},
+    {'title': 'Security', 'icon': Icons.security},
+    {'title': 'Fashion/Design/Beauty', 'icon': Icons.spa},
+    {'title': 'International Development', 'icon': Icons.sports_volleyball},
+    {'title': 'KPO/BPO', 'icon': Icons.stream},
+    {'title': 'Imports/Exports', 'icon': Icons.import_export},
   ];
 
   List<int> rssCounts = [];
@@ -262,12 +271,13 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                                 const SizedBox(
                                   height: 50,
                                 ),
-                                const SizedBox(
+                                SizedBox(
                                   height: 50,
                                   child: Icon(
-                                    FontAwesomeIcons.briefcase,
-                                    size: 18,
-                                    color: Color.fromARGB(255, 65, 180, 19),
+                                    rssTitles[index]['icon'],
+                                    size: 22,
+                                    color:
+                                        const Color.fromARGB(255, 49, 49, 49),
                                   ),
                                 ),
                                 Padding(
@@ -280,23 +290,19 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        rssTitles[index],
-                                        style:
-                                            kTitleStyle.copyWith(fontSize: 15),
-                                        overflow: TextOverflow.fade,
-                                        maxLines: 1,
-                                        softWrap: false,
-                                      ),
-                                      const SizedBox(
-                                        height: 3,
-                                      ),
-                                      Text(
-                                        'Jobs: ${rssCounts[index]}',
-                                        style: const TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 119, 13, 13),
-                                          fontWeight: FontWeight.w500,
+                                      Text.rich(
+                                        TextSpan(
+                                          text:
+                                              '${rssTitles[index]['title']} ⦁ ',
+                                          children: <TextSpan>[
+                                            TextSpan(
+                                              text: '(${rssCounts[index]})',
+                                              style: const TextStyle(
+                                                color: Colors.green,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ],
