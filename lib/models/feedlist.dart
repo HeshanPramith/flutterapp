@@ -7,6 +7,7 @@ import 'package:webfeed/webfeed.dart';
 import 'package:http/io_client.dart';
 import 'dart:io';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RSSFeedScreen extends StatefulWidget {
   const RSSFeedScreen({Key? key}) : super(key: key);
@@ -294,6 +295,9 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                                         TextSpan(
                                           text:
                                               '${rssTitles[index]['title']} ⦁ ',
+                                          style: const TextStyle(
+                                            fontSize: 15.0,
+                                          ),
                                           children: <TextSpan>[
                                             TextSpan(
                                               text: '(${rssCounts[index]})',
@@ -361,20 +365,68 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
   String searchQuery = '';
 
   List<RssItem> get filteredItems {
-    if (searchQuery.isEmpty) {
-      return widget.feed.items ?? [];
-    } else {
+    if (_showFavoritesOnly) {
       return (widget.feed.items ?? []).where((item) {
-        final title = item.title?.toString().toLowerCase() ?? '';
-        final description = item.description?.toString().toLowerCase() ?? '';
-        return title.contains(searchQuery.toLowerCase()) ||
-            description.contains(searchQuery.toLowerCase());
+        final itemTitle = item.title?.toString() ?? '';
+        return _favoriteItems.contains(itemTitle);
       }).toList();
+    } else {
+      if (searchQuery.isEmpty) {
+        return widget.feed.items ?? [];
+      } else {
+        return (widget.feed.items ?? []).where((item) {
+          final title = item.title?.toString().toLowerCase() ?? '';
+          final description = item.description?.toString().toLowerCase() ?? '';
+          return title.contains(searchQuery.toLowerCase()) ||
+              description.contains(searchQuery.toLowerCase());
+        }).toList();
+      }
     }
   }
 
   hideKeyboard() {
     FocusScope.of(context).requestFocus(FocusNode());
+  }
+
+  late SharedPreferences _preferences;
+  List<String> _favoriteItems = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadFavorites();
+  }
+
+  void _loadFavorites() async {
+    _preferences = await SharedPreferences.getInstance();
+    setState(() {
+      _favoriteItems = _preferences.getStringList('favoriteItems') ?? [];
+    });
+  }
+
+  void _toggleFavoriteItem(RssItem item) {
+    final itemTitle = item.title?.toString() ?? '';
+    setState(() {
+      if (_favoriteItems.contains(itemTitle)) {
+        _favoriteItems.remove(itemTitle);
+      } else {
+        _favoriteItems.add(itemTitle);
+      }
+      _preferences.setStringList('favoriteItems', _favoriteItems);
+    });
+  }
+
+  bool _isItemFavorite(RssItem item) {
+    final itemTitle = item.title?.toString() ?? '';
+    return _favoriteItems.contains(itemTitle);
+  }
+
+  bool _showFavoritesOnly = false;
+
+  void toggleShowFavoritesOnly() {
+    setState(() {
+      _showFavoritesOnly = !_showFavoritesOnly;
+    });
   }
 
   @override
@@ -404,6 +456,13 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
             ),
           ),
           centerTitle: true,
+          actions: [
+            IconButton(
+              icon: Icon(
+                  _showFavoritesOnly ? Icons.favorite : Icons.favorite_border),
+              onPressed: toggleShowFavoritesOnly,
+            ),
+          ],
         ),
         body: Container(
           height: double.infinity,
@@ -504,14 +563,18 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                   ListTile(
                                     minLeadingWidth: 20,
                                     contentPadding: const EdgeInsets.all(0),
-                                    trailing: const Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: 18.0,
+                                    trailing: IconButton(
+                                      icon: Icon(
+                                        _isItemFavorite(item)
+                                            ? Icons.favorite
+                                            : Icons.favorite_outline,
+                                        color: _isItemFavorite(item)
+                                            ? Colors.red
+                                            : const Color.fromARGB(
+                                                255, 134, 134, 134),
                                       ),
-                                      child: Icon(
-                                        Icons.arrow_forward_outlined,
-                                        color: Colors.green,
-                                      ),
+                                      onPressed: () =>
+                                          _toggleFavoriteItem(item),
                                     ),
                                     title: Column(
                                       mainAxisAlignment:

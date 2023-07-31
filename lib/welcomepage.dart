@@ -20,7 +20,7 @@ class _WelcomePageState extends State<WelcomePage> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 163, 0, 0),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -55,9 +55,9 @@ class _WelcomePageState extends State<WelcomePage> {
                       'topjobs',
                       style: TextStyle(
                         fontFamily: 'Verdana',
-                        fontSize: 58,
+                        fontSize: 50,
                         color: Colors.white,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -88,40 +88,7 @@ class _WelcomePageState extends State<WelcomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  // SizedBox(
-                  //   width: 160.0,
-                  //   height: 50.0,
-                  //   child: ElevatedButton(
-                  //     onPressed: () {
-                  //       Navigator.push(
-                  //         context,
-                  //         PageTransition(
-                  //           type: PageTransitionType.fade,
-                  //           duration: const Duration(milliseconds: 200),
-                  //           child: const LoginPage(),
-                  //         ),
-                  //       );
-                  //     },
-                  //     style: ElevatedButton.styleFrom(
-                  //       foregroundColor: Colors.white,
-                  //       backgroundColor: const Color.fromARGB(255, 52, 177, 14),
-                  //     ),
-                  //     child: const Row(
-                  //       mainAxisSize: MainAxisSize.min,
-                  //       children: [
-                  //         Text('Sign In'),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
-                  // const SizedBox(
-                  //   child: Text(
-                  //     'OR',
-                  //     style: TextStyle(color: Colors.white),
-                  //   ),
-                  // ),
                   SizedBox(
-                    width: 160.0,
                     height: 50.0,
                     child: ElevatedButton(
                       onPressed: () {
@@ -135,13 +102,31 @@ class _WelcomePageState extends State<WelcomePage> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: const Color.fromARGB(255, 21, 177, 15),
+                        foregroundColor: const Color.fromARGB(255, 20, 218, 79),
+                        backgroundColor:
+                            const Color.fromARGB(255, 255, 198, 42),
+                        elevation: 0.0,
                       ),
                       child: const Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('View Latest Jobs'),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          Text(
+                            'View Latest Jobs',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Icon(
+                            Icons.arrow_forward_sharp,
+                            color: Colors.black,
+                          )
                         ],
                       ),
                     ),
@@ -149,21 +134,8 @@ class _WelcomePageState extends State<WelcomePage> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 70.0,
-              child: Center(
-                child: Text(
-                  'Design & Developed By Heshan @ GENESIIS',
-                  style: GoogleFonts.openSans(
-                    textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: .5,
-                    ),
-                  ),
-                ),
-              ),
+            const SizedBox(
+              height: 40.0,
             ),
           ],
         ),
