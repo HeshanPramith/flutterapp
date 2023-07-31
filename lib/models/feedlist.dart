@@ -563,18 +563,26 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                   ListTile(
                                     minLeadingWidth: 20,
                                     contentPadding: const EdgeInsets.all(0),
-                                    trailing: IconButton(
-                                      icon: Icon(
-                                        _isItemFavorite(item)
-                                            ? Icons.favorite
-                                            : Icons.favorite_outline,
-                                        color: _isItemFavorite(item)
-                                            ? Colors.red
-                                            : const Color.fromARGB(
-                                                255, 134, 134, 134),
-                                      ),
-                                      onPressed: () =>
-                                          _toggleFavoriteItem(item),
+                                    trailing: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        IconButton(
+                                          icon: Icon(
+                                            _isItemFavorite(item)
+                                                ? Icons.favorite
+                                                : Icons.favorite_outline,
+                                            color: _isItemFavorite(item)
+                                                ? Colors.red
+                                                : const Color.fromARGB(
+                                                    255, 134, 134, 134),
+                                          ),
+                                          onPressed: () =>
+                                              _toggleFavoriteItem(item),
+                                        ),
+                                      ],
                                     ),
                                     title: Column(
                                       mainAxisAlignment:
@@ -582,7 +590,12 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(title),
+                                        Text(
+                                          title,
+                                          overflow: TextOverflow.fade,
+                                          maxLines: 1,
+                                          softWrap: false,
+                                        ),
                                       ],
                                     ),
                                     subtitle: Column(
@@ -595,12 +608,19 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                           height: 5.0,
                                         ),
                                         Text(
-                                            item.description?.toString() ?? ''),
+                                          item.description?.toString() ?? '',
+                                          overflow: TextOverflow.fade,
+                                          maxLines: 1,
+                                          softWrap: false,
+                                        ),
                                         const SizedBox(
                                           height: 5.0,
                                         ),
                                         Text(
                                           item.dc?.creator ?? '',
+                                          overflow: TextOverflow.fade,
+                                          maxLines: 1,
+                                          softWrap: false,
                                           style: const TextStyle(
                                             fontSize: 14.0,
                                           ),
