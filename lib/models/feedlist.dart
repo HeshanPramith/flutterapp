@@ -431,7 +431,70 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
     return locations;
   }
 
-  Color selectedItemBackgroundColor = Colors.blue;
+  void _showLocationBottomSheet() {
+    showModalBottomSheet(
+      backgroundColor: Colors.transparent,
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: const EdgeInsets.only(
+            top: 30.0,
+          ),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color.fromARGB(255, 247, 66, 66),
+                Color.fromARGB(255, 100, 1, 1),
+              ],
+            ),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40.0),
+              topRight: Radius.circular(
+                40.0,
+              ),
+            ),
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ListTile(
+                  title: const Text(
+                    'All Locations',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    setState(() {
+                      selectedLocation = '';
+                    });
+                    Navigator.pop(
+                        context); // Close the BottomSheet after selection
+                  },
+                ),
+                for (String location in getUniqueLocations())
+                  ListTile(
+                    title: Text(
+                      location,
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        selectedLocation = location;
+                      });
+                      Navigator.pop(
+                          context); // Close the BottomSheet after selection
+                    },
+                  ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -525,78 +588,29 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
-                child: Container(
-                  padding: const EdgeInsets.only(
-                      top: 0, right: 15, bottom: 0, left: 16),
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 119, 13, 13),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    children: [
-                      DropdownButton<String>(
-                        value: selectedLocation,
-                        onChanged: (newValue) {
-                          setState(() {
-                            selectedLocation = newValue!;
-                          });
-                        },
-                        alignment: Alignment.bottomCenter,
-                        icon: const Visibility(
-                          visible: false,
-                          child: Icon(Icons.location_pin),
-                        ),
-                        iconEnabledColor: Colors.white,
-                        iconSize: 18,
-                        underline: Container(),
-                        isExpanded: true,
-                        dropdownColor: const Color.fromARGB(255, 119, 13, 13),
-                        items: [
-                          const DropdownMenuItem(
-                            value: '',
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'All Locations',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                Icon(
-                                  Icons.location_pin,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            ),
-                          ),
-                          ...getUniqueLocations().map(
-                            (location) => DropdownMenuItem(
-                              value: location,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    location,
-                                    style: const TextStyle(
-                                      color: Color.fromARGB(255, 255, 255, 255),
-                                    ),
-                                  ),
-                                  if (selectedLocation == location)
-                                    const Icon(
-                                      Icons.check,
-                                      color: Colors.white,
-                                    ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                        elevation: 0,
-                        borderRadius: BorderRadius.circular(5),
+                padding: const EdgeInsets.only(
+                  left: 15,
+                  right: 15,
+                  top: 10,
+                ),
+                child: Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: _showLocationBottomSheet,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 119, 13, 13),
+                        elevation: 0.0,
                       ),
-                    ],
-                  ),
+                      child: Text(
+                        selectedLocation.isEmpty
+                            ? 'All Locations'
+                            : selectedLocation,
+                        style: const TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Expanded(
