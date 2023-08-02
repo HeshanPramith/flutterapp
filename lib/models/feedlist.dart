@@ -348,6 +348,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
   }
 
   String searchQuery = '';
+  String selectedLocation = '';
 
   List<RssItem> get filteredItems {
     if (_showFavoritesOnly) {
@@ -356,14 +357,21 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
         return _favoriteItems.contains(itemTitle);
       }).toList();
     } else {
-      if (searchQuery.isEmpty) {
+      if (searchQuery.isEmpty && selectedLocation.isEmpty) {
         return widget.feed.items ?? [];
       } else {
         return (widget.feed.items ?? []).where((item) {
           final title = item.title?.toString().toLowerCase() ?? '';
           final description = item.description?.toString().toLowerCase() ?? '';
-          return title.contains(searchQuery.toLowerCase()) ||
+          final location = item.dc?.coverage.toString().toLowerCase() ??
+              ''; // Replace "location" with the actual field in your RssItem class representing the location.
+
+          bool matchesSearchQuery = title.contains(searchQuery.toLowerCase()) ||
               description.contains(searchQuery.toLowerCase());
+          bool matchesSelectedLocation = selectedLocation.isEmpty ||
+              location.contains(selectedLocation.toLowerCase());
+
+          return matchesSearchQuery && matchesSelectedLocation;
         }).toList();
       }
     }
@@ -413,6 +421,17 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
       _showFavoritesOnly = !_showFavoritesOnly;
     });
   }
+
+  List<String> getUniqueLocations() {
+    final locations = widget.feed.items!
+        .map((item) => item.dc?.coverage?.toString().toLowerCase() ?? '')
+        .toSet()
+        .toList();
+    locations.sort(); // Optional: Sort the locations alphabetically.
+    return locations;
+  }
+
+  Color selectedItemBackgroundColor = Colors.blue;
 
   @override
   Widget build(BuildContext context) {
@@ -477,26 +496,106 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                     color: const Color.fromARGB(255, 119, 13, 13),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: TextField(
-                    style: const TextStyle(color: Colors.white),
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Search Your Job',
-                      hintStyle:
-                          TextStyle(color: Color.fromARGB(111, 255, 255, 255)),
-                      icon: FaIcon(
-                        FontAwesomeIcons.magnifyingGlass,
-                        size: 18,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                      ),
-                    ),
-                    onChanged: (value) {
-                      setState(
-                        () {
-                          searchQuery = value;
+                  child: Column(
+                    children: [
+                      TextField(
+                        style: const TextStyle(color: Colors.white),
+                        decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Search Your Job',
+                            hintStyle: TextStyle(
+                              color: Color.fromARGB(111, 255, 255, 255),
+                            ),
+                            suffixIcon: FaIcon(
+                              FontAwesomeIcons.magnifyingGlass,
+                              size: 18,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                            suffixIconConstraints: BoxConstraints()),
+                        onChanged: (value) {
+                          setState(
+                            () {
+                              searchQuery = value;
+                            },
+                          );
                         },
-                      );
-                    },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
+                child: Container(
+                  padding: const EdgeInsets.only(
+                      top: 0, right: 15, bottom: 0, left: 16),
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 119, 13, 13),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+                      DropdownButton<String>(
+                        value: selectedLocation,
+                        onChanged: (newValue) {
+                          setState(() {
+                            selectedLocation = newValue!;
+                          });
+                        },
+                        alignment: Alignment.bottomCenter,
+                        icon: const Visibility(
+                          visible: false,
+                          child: Icon(Icons.location_pin),
+                        ),
+                        iconEnabledColor: Colors.white,
+                        iconSize: 18,
+                        underline: Container(),
+                        isExpanded: true,
+                        dropdownColor: const Color.fromARGB(255, 119, 13, 13),
+                        items: [
+                          const DropdownMenuItem(
+                            value: '',
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'All Locations',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                Icon(
+                                  Icons.location_pin,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            ),
+                          ),
+                          ...getUniqueLocations().map(
+                            (location) => DropdownMenuItem(
+                              value: location,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    location,
+                                    style: const TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                    ),
+                                  ),
+                                  if (selectedLocation == location)
+                                    const Icon(
+                                      Icons.check,
+                                      color: Colors.white,
+                                    ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                        elevation: 0,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ],
                   ),
                 ),
               ),
