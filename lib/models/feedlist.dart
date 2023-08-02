@@ -435,10 +435,12 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
     showModalBottomSheet(
       backgroundColor: Colors.transparent,
       context: context,
+      isScrollControlled: true,
       builder: (BuildContext context) {
         return Container(
+          height: MediaQuery.of(context).copyWith().size.height * 0.75,
           padding: const EdgeInsets.only(
-            top: 30.0,
+            bottom: 15.0,
           ),
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -456,40 +458,93 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
               ),
             ),
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  title: const Text(
-                    'All Locations',
-                    style: TextStyle(color: Colors.white),
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 15.0),
+                child: Text(
+                  'Select Your Location',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
                   ),
-                  onTap: () {
-                    setState(() {
-                      selectedLocation = '';
-                    });
-                    Navigator.pop(
-                        context); // Close the BottomSheet after selection
-                  },
                 ),
-                for (String location in getUniqueLocations())
-                  ListTile(
-                    title: Text(
-                      location,
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                    onTap: () {
-                      setState(() {
-                        selectedLocation = location;
-                      });
-                      Navigator.pop(
-                          context); // Close the BottomSheet after selection
-                    },
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.white10),
+                          ),
+                        ),
+                        child: ListTile(
+                          title: const Text(
+                            'All Locations',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                          onTap: () {
+                            setState(
+                              () {
+                                selectedLocation = '';
+                              },
+                            );
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ),
+                      for (String location in getUniqueLocations())
+                        Container(
+                          decoration: const BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(color: Colors.white10),
+                            ),
+                          ),
+                          child: ListTile(
+                            title: Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    location,
+                                    style: TextStyle(
+                                      color: location == selectedLocation
+                                          ? Colors.white
+                                          : Colors.white70,
+                                      fontSize: 15.0,
+                                      fontWeight: location == selectedLocation
+                                          ? FontWeight.w500
+                                          : FontWeight.normal,
+                                    ),
+                                  ),
+                                ),
+                                if (location == selectedLocation)
+                                  const Icon(
+                                    Icons.check,
+                                    color: Colors.white,
+                                  ),
+                              ],
+                            ),
+                            onTap: () {
+                              setState(() {
+                                selectedLocation = location;
+                              });
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                    ],
                   ),
-              ],
-            ),
+                ),
+              ),
+            ],
           ),
         );
       },
@@ -567,11 +622,12 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                             border: InputBorder.none,
                             hintText: 'Search Your Job',
                             hintStyle: TextStyle(
-                              color: Color.fromARGB(111, 255, 255, 255),
+                              color: Colors.white,
+                              fontSize: 15,
                             ),
                             suffixIcon: FaIcon(
                               FontAwesomeIcons.magnifyingGlass,
-                              size: 18,
+                              size: 16,
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
                             suffixIconConstraints: BoxConstraints()),
@@ -600,14 +656,30 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(255, 119, 13, 13),
                         elevation: 0.0,
-                      ),
-                      child: Text(
-                        selectedLocation.isEmpty
-                            ? 'All Locations'
-                            : selectedLocation,
-                        style: const TextStyle(
-                          color: Colors.white,
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 15.0,
+                          horizontal: 15.0,
                         ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            selectedLocation.isEmpty
+                                ? 'All Locations'
+                                : selectedLocation,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          const Spacer(),
+                          const Icon(
+                            Icons.location_pin,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                        ],
                       ),
                     ),
                   ],
