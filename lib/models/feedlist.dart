@@ -10,7 +10,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RSSFeedScreen extends StatefulWidget {
-  const RSSFeedScreen({Key? key}) : super(key: key);
+  final List<int> rssCounts;
+  const RSSFeedScreen({Key? key, required this.rssCounts}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _RSSFeedScreenState();
@@ -195,15 +196,15 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: const Color.fromARGB(255, 119, 13, 13),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () => Navigator.pop(context),
-        ),
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back_ios),
+        //   onPressed: () => Navigator.pop(context),
+        // ),
         title: const Text(
-          'topjobs',
+          'Choose Your Career Path',
           style: TextStyle(
             color: Color.fromARGB(255, 255, 255, 255),
-            fontSize: 24,
+            fontSize: 18,
             fontWeight: FontWeight.w500,
             fontFamily: 'Verdana',
           ),
@@ -215,22 +216,6 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
         color: Colors.transparent,
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 10,
-                bottom: 20,
-                left: 15,
-                right: 15,
-              ),
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'Select Job Category',
-                  style: kPageTitleStyle.copyWith(
-                      fontSize: 18, color: Colors.white),
-                ),
-              ),
-            ),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.only(top: 20),
@@ -628,17 +613,21 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                         const SizedBox(
                                           height: 5.0,
                                         ),
-                                        Text.rich(
-                                          TextSpan(
-                                            text: '${item.dc?.coverage} ⦁ ',
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: '${item.dc?.rights}',
-                                                style: const TextStyle(
-                                                  color: Colors.green,
-                                                ),
-                                              ),
-                                            ],
+                                        Text(
+                                          '${item.dc?.coverage}',
+                                          style: const TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 13, 101, 173),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 5.0,
+                                        ),
+                                        Text(
+                                          'Expires on: ${item.dc?.rights}',
+                                          style: const TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 165, 17, 17),
                                           ),
                                         ),
                                       ],

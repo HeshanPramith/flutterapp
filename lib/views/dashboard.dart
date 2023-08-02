@@ -43,7 +43,9 @@ class _DashboardState extends State<Dashboard> {
                   PageTransition(
                     type: PageTransitionType.fade,
                     duration: const Duration(milliseconds: 100),
-                    child: const WelcomePage(),
+                    child: const WelcomePage(
+                      rssCounts: [],
+                    ),
                   ),
                 );
               },

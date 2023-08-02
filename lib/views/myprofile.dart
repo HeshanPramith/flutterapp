@@ -53,7 +53,9 @@ class _MyaccountState extends State<Myaccount> {
                   PageTransition(
                     type: PageTransitionType.fade,
                     duration: const Duration(milliseconds: 100),
-                    child: const WelcomePage(),
+                    child: const WelcomePage(
+                      rssCounts: [],
+                    ),
                   ),
                 );
               },

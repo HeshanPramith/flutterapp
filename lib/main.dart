@@ -33,7 +33,9 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const WelcomePage(),
+      home: const WelcomePage(
+        rssCounts: [],
+      ),
     );
   }
 }

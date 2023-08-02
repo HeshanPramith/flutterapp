@@ -114,7 +114,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   PageTransition(
                     type: PageTransitionType.fade,
                     duration: const Duration(milliseconds: 100),
-                    child: const WelcomePage(),
+                    child: const WelcomePage(
+                      rssCounts: [],
+                    ),
                   ),
                 );
               },
@@ -227,7 +229,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                   PageTransition(
                                     type: PageTransitionType.fade,
                                     duration: const Duration(milliseconds: 200),
-                                    child: const RSSFeedScreen(),
+                                    child: const RSSFeedScreen(
+                                      rssCounts: [],
+                                    ),
                                   ),
                                 );
                               },
