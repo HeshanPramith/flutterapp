@@ -427,7 +427,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
         .map((item) => item.dc?.coverage?.toString().toLowerCase() ?? '')
         .toSet()
         .toList();
-    locations.sort(); // Optional: Sort the locations alphabetically.
+    locations.sort();
     return locations;
   }
 
@@ -513,7 +513,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                               children: [
                                 Expanded(
                                   child: Text(
-                                    location,
+                                    location.capitalize(),
                                     style: TextStyle(
                                       color: location == selectedLocation
                                           ? Colors.white
@@ -623,7 +623,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                             hintText: 'Search Your Job',
                             hintStyle: TextStyle(
                               color: Colors.white,
-                              fontSize: 15,
+                              fontSize: 14,
                             ),
                             suffixIcon: FaIcon(
                               FontAwesomeIcons.magnifyingGlass,
@@ -670,7 +670,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                           Text(
                             selectedLocation.isEmpty
                                 ? 'All Locations'
-                                : selectedLocation,
+                                : selectedLocation.capitalize(),
                             style: const TextStyle(color: Colors.white),
                           ),
                           const Spacer(),
@@ -833,5 +833,11 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
         ),
       ),
     );
+  }
+}
+
+extension StringExtension on String {
+  String capitalize() {
+    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
   }
 }

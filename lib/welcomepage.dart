@@ -190,7 +190,7 @@ class _WelcomePageState extends State<WelcomePage> {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: Text(
-                  'Total Occupations: $totalCount',
+                  'Total Vacancies: $totalCount',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 20,
