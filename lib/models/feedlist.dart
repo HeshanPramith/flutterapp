@@ -53,26 +53,20 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
   ];
 
   List<Map<String, dynamic>> rssTitles = [
-    {'title': 'IT-Sware/DB/QA/Web/Graphics/GIS', 'icon': Icons.design_services},
-    {'title': 'IT-HWare/Networks/Systems', 'icon': Icons.network_wifi},
+    {'title': 'IT-SW/DB/QA/Web/Graphics/GIS', 'icon': Icons.design_services},
+    {'title': 'IT-HW/Networks/Systems', 'icon': Icons.network_wifi},
     {'title': 'Accounting/Auditing/Finance', 'icon': Icons.account_balance},
     {'title': 'Banking/Insurance', 'icon': Icons.money},
     {'title': 'Sales/Marketing/Merchandising', 'icon': Icons.shopify},
     {'title': 'HR/Training', 'icon': Icons.people},
     {'title': 'Corporate Management/Analysts', 'icon': Icons.pie_chart},
     {
-      'title': 'Office Admin/Secretary/Receptionist',
+      'title': 'Admin/Secretary/Receptionist',
       'icon': Icons.admin_panel_settings
     },
-    {
-      'title': 'Civil Eng/Interior Design/Architecture',
-      'icon': Icons.house_siding
-    },
+    {'title': 'Civil Eng/Interior/Architecture', 'icon': Icons.house_siding},
     {'title': 'IT-Telecoms', 'icon': Icons.phone},
-    {
-      'title': 'Customer Relations/Public Relations',
-      'icon': Icons.verified_user
-    },
+    {'title': 'Customer/Public Relations', 'icon': Icons.verified_user},
     {'title': 'Logistics/Warehouse/Transport', 'icon': Icons.car_rental},
     {'title': 'Eng-Mech/Auto/Elec', 'icon': Icons.tv},
     {'title': 'Manufacturing/Operations', 'icon': Icons.gif_box},
@@ -754,7 +748,23 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                         ),
                                       ],
                                     ),
-                                    title: Column(
+                                    leading: Row(
+                                      children: [
+                                        Image.network(
+                                          'http://123.231.114.194:7070/logo/${item.dc?.publisher}',
+                                          height: 30,
+                                          errorBuilder:
+                                              (context, error, stackTrace) {
+                                            return const Icon(
+                                              Icons.error_outline,
+                                              color: Colors.red,
+                                              size: 24.0,
+                                            );
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                    title: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       crossAxisAlignment:
@@ -814,6 +824,9 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                             color: Color.fromARGB(
                                                 255, 165, 17, 17),
                                           ),
+                                        ),
+                                        const SizedBox(
+                                          height: 5.0,
                                         ),
                                       ],
                                     ),
