@@ -698,9 +698,12 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                       itemBuilder: (BuildContext context, int index) {
                         var item = filteredItems[index];
                         String title = item.title?.toString() ?? '';
+                        String description = item.description?.toString() ?? '';
                         //title = title.replaceAll(RegExp(r'[0-9]'), '');
                         //title = title.replaceAll('-', '⦁');
                         title = title.trim().replaceAll(RegExp(r'\s+'), ' ');
+                        description =
+                            description.trim().replaceAll(RegExp(r'\s+'), ' ');
                         final Uri toLaunch = Uri(
                           scheme: 'http',
                           host: '123.231.114.194',
@@ -717,21 +720,110 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                           child: Card(
                             elevation: 0.0,
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 5.0,
-                                horizontal: 15,
+                              padding: const EdgeInsets.only(
+                                top: 16.0,
+                                right: 10.0,
+                                bottom: 16.0,
+                                left: 16.0,
                               ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  ListTile(
-                                    minLeadingWidth: 20,
-                                    contentPadding: const EdgeInsets.all(0),
-                                    trailing: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 70,
+                                    child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Image.network(
+                                          'http://123.231.114.194:7070/logo/${item.dc?.publisher}',
+                                          width: 50,
+                                          errorBuilder:
+                                              (context, error, stackTrace) {
+                                            return const Icon(
+                                              Icons.error_outline,
+                                              color: Colors.red,
+                                              size: 24.0,
+                                            );
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: SizedBox(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            title,
+                                            style: const TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                            overflow: TextOverflow.fade,
+                                            maxLines: 1,
+                                            softWrap: false,
+                                          ),
+                                          const SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Text(
+                                            description,
+                                            style: const TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.black87,
+                                            ),
+                                            overflow: TextOverflow.fade,
+                                            maxLines: 1,
+                                            softWrap: false,
+                                          ),
+                                          const SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Text(
+                                            item.dc?.creator ?? '',
+                                            overflow: TextOverflow.fade,
+                                            maxLines: 1,
+                                            softWrap: false,
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Text(
+                                            '${item.dc?.coverage}',
+                                            style: const TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 13, 101, 173),
+                                              fontSize: 13,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          Text(
+                                            'Expires on: ${item.dc?.rights}',
+                                            style: const TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 165, 17, 17),
+                                              fontSize: 13,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 60,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
                                       children: [
                                         IconButton(
                                           icon: Icon(
@@ -745,88 +837,6 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                           ),
                                           onPressed: () =>
                                               _toggleFavoriteItem(item),
-                                        ),
-                                      ],
-                                    ),
-                                    leading: Row(
-                                      children: [
-                                        Image.network(
-                                          'http://123.231.114.194:7070/logo/${item.dc?.publisher}',
-                                          height: 30,
-                                          errorBuilder:
-                                              (context, error, stackTrace) {
-                                            return const Icon(
-                                              Icons.error_outline,
-                                              color: Colors.red,
-                                              size: 24.0,
-                                            );
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                    title: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          title,
-                                          overflow: TextOverflow.fade,
-                                          maxLines: 1,
-                                          softWrap: false,
-                                        ),
-                                      ],
-                                    ),
-                                    subtitle: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        const SizedBox(
-                                          height: 5.0,
-                                        ),
-                                        Text(
-                                          item.description?.toString() ?? '',
-                                          overflow: TextOverflow.fade,
-                                          maxLines: 1,
-                                          softWrap: false,
-                                        ),
-                                        const SizedBox(
-                                          height: 5.0,
-                                        ),
-                                        Text(
-                                          item.dc?.creator ?? '',
-                                          overflow: TextOverflow.fade,
-                                          maxLines: 1,
-                                          softWrap: false,
-                                          style: const TextStyle(
-                                            fontSize: 14.0,
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 5.0,
-                                        ),
-                                        Text(
-                                          '${item.dc?.coverage}',
-                                          style: const TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 13, 101, 173),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 5.0,
-                                        ),
-                                        Text(
-                                          'Expires on: ${item.dc?.rights}',
-                                          style: const TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 165, 17, 17),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 5.0,
                                         ),
                                       ],
                                     ),
