@@ -248,8 +248,17 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
       onVerticalDragDown: (_) {
         hideKeyboard();
       },
-      onHorizontalDragEnd: (details) {
-        if (details.primaryVelocity != null && details.primaryVelocity! < 0) {
+      // onHorizontalDragEnd: (details) {
+      //   Navigator.of(context).push(
+      //     CupertinoPageRoute(
+      //       builder: (context) => const RSSFeedScreen(
+      //         rssCounts: [],
+      //       ),
+      //     ),
+      //   );
+      // },
+      onPanUpdate: (details) {
+        if (details.delta.dx > 0) {
           Navigator.of(context).pop();
         }
       },

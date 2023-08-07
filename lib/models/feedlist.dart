@@ -185,6 +185,7 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 119, 13, 13),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         elevation: 0.0,
         backgroundColor: const Color.fromARGB(255, 119, 13, 13),
         title: const Text(
