@@ -187,10 +187,6 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: const Color.fromARGB(255, 119, 13, 13),
-        // leading: IconButton(
-        //   icon: const Icon(Icons.arrow_back_ios),
-        //   onPressed: () => Navigator.pop(context),
-        // ),
         title: const Text(
           'Choose Your Career Path',
           style: TextStyle(

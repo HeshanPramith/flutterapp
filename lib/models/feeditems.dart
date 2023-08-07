@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:topjobs/constants.dart';
-import 'package:topjobs/models/feedlist.dart';
 import 'package:webfeed/webfeed.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -250,15 +249,8 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
         hideKeyboard();
       },
       onHorizontalDragEnd: (details) {
-        if (details.velocity.pixelsPerSecond.dx > 0) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const RSSFeedScreen(
-                rssCounts: [],
-              ),
-            ),
-          );
+        if (details.primaryVelocity != null && details.primaryVelocity! < 0) {
+          Navigator.of(context).pop();
         }
       },
       child: Scaffold(
