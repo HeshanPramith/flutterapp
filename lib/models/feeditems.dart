@@ -414,7 +414,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                         description =
                             description.trim().replaceAll(RegExp(r'\s+'), ' ');
                         final Uri toLaunch = Uri(
-                          scheme: 'http',
+                          scheme: 'https',
                           host: 'www.topjobs.lk',
                           //port: 7070,
                           path: 'employer/JobAdvertismentServlet',
@@ -444,7 +444,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Image.network(
-                                          'http://www.topjobs.lk/logo/${item.dc?.publisher}',
+                                          'https://www.topjobs.lk/logo/${item.dc?.publisher}',
                                           width: 50,
                                           errorBuilder:
                                               (context, error, stackTrace) {
