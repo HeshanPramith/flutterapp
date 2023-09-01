@@ -5,6 +5,7 @@ import 'package:topjobs/models/feeditems.dart';
 import 'package:webfeed/webfeed.dart';
 import 'package:http/io_client.dart';
 import 'dart:io';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RSSFeedScreen extends StatefulWidget {
   final List<int> rssCounts;
@@ -15,6 +16,8 @@ class RSSFeedScreen extends StatefulWidget {
 }
 
 class _RSSFeedScreenState extends State<RSSFeedScreen> {
+  late SharedPreferences _prefs;
+
   List<String> rssUrls = [
     'https://www.topjobs.lk/rss/it_sware_db_qa_web_graphics_gis.rss',
     'https://www.topjobs.lk/rss/it_hware_networks_systems.rss',
@@ -50,40 +53,125 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
   ];
 
   List<Map<String, dynamic>> rssTitles = [
-    {'title': 'IT-SW/DB/QA/Web/Graphics/GIS', 'icon': Icons.design_services},
-    {'title': 'IT-HW/Networks/Systems', 'icon': Icons.network_wifi},
-    {'title': 'Accounting/Auditing/Finance', 'icon': Icons.account_balance},
-    {'title': 'Banking/Insurance', 'icon': Icons.money},
-    {'title': 'Sales/Marketing/Merchandising', 'icon': Icons.shopify},
-    {'title': 'HR/Training', 'icon': Icons.people},
-    {'title': 'Corporate Management/Analysts', 'icon': Icons.pie_chart},
+    {
+      'title': 'IT-SW/DB/QA/Web/Graphics/GIS',
+      'icon': Icons.design_services,
+      'bookmarked': false
+    },
+    {
+      'title': 'IT-HW/Networks/Systems',
+      'icon': Icons.network_wifi,
+      'bookmarked': false
+    },
+    {
+      'title': 'Accounting/Auditing/Finance',
+      'icon': Icons.account_balance,
+      'bookmarked': false
+    },
+    {'title': 'Banking/Insurance', 'icon': Icons.money, 'bookmarked': false},
+    {
+      'title': 'Sales/Marketing/Merchandising',
+      'icon': Icons.shopify,
+      'bookmarked': false
+    },
+    {'title': 'HR/Training', 'icon': Icons.people, 'bookmarked': false},
+    {
+      'title': 'Corporate Management/Analysts',
+      'icon': Icons.pie_chart,
+      'bookmarked': false
+    },
     {
       'title': 'Admin/Secretary/Receptionist',
-      'icon': Icons.admin_panel_settings
+      'icon': Icons.admin_panel_settings,
+      'bookmarked': false
     },
-    {'title': 'Civil Eng/Interior/Architecture', 'icon': Icons.house_siding},
-    {'title': 'IT-Telecoms', 'icon': Icons.phone},
-    {'title': 'Customer/Public Relations', 'icon': Icons.verified_user},
-    {'title': 'Logistics/Warehouse/Transport', 'icon': Icons.car_rental},
-    {'title': 'Eng-Mech/Auto/Elec', 'icon': Icons.tv},
-    {'title': 'Manufacturing/Operations', 'icon': Icons.gif_box},
-    {'title': 'Media/Advert/Communication', 'icon': Icons.video_camera_back},
-    {'title': 'Hotels/Restaurants/Food', 'icon': Icons.hotel},
-    {'title': 'Hospitality/Tourism', 'icon': Icons.directions_boat},
-    {'title': 'Sports/Fitness/Recreation', 'icon': Icons.sports_gymnastics},
-    {'title': 'Hospital/Nursing/Healthcare', 'icon': Icons.local_hospital},
-    {'title': 'Legal/Law', 'icon': Icons.local_library},
-    {'title': 'Supervision/Quality Control', 'icon': Icons.check_circle},
-    {'title': 'Apparel/Clothing', 'icon': Icons.checkroom},
-    {'title': 'Ticketing/Airline/Marine', 'icon': Icons.airplane_ticket},
-    {'title': 'Teaching/Academic/Library', 'icon': Icons.library_add},
-    {'title': 'R&D/Science/Research', 'icon': Icons.hourglass_bottom},
-    {'title': 'Agriculture/Dairy/Environment', 'icon': Icons.computer},
-    {'title': 'Security', 'icon': Icons.security},
-    {'title': 'Fashion/Design/Beauty', 'icon': Icons.spa},
-    {'title': 'International Development', 'icon': Icons.sports_volleyball},
-    {'title': 'KPO/BPO', 'icon': Icons.stream},
-    {'title': 'Imports/Exports', 'icon': Icons.import_export},
+    {
+      'title': 'Civil Eng/Interior/Architecture',
+      'icon': Icons.house_siding,
+      'bookmarked': false
+    },
+    {'title': 'IT-Telecoms', 'icon': Icons.phone, 'bookmarked': false},
+    {
+      'title': 'Customer/Public Relations',
+      'icon': Icons.verified_user,
+      'bookmarked': false
+    },
+    {
+      'title': 'Logistics/Warehouse/Transport',
+      'icon': Icons.car_rental,
+      'bookmarked': false
+    },
+    {'title': 'Eng-Mech/Auto/Elec', 'icon': Icons.tv, 'bookmarked': false},
+    {
+      'title': 'Manufacturing/Operations',
+      'icon': Icons.gif_box,
+      'bookmarked': false
+    },
+    {
+      'title': 'Media/Advert/Communication',
+      'icon': Icons.video_camera_back,
+      'bookmarked': false
+    },
+    {
+      'title': 'Hotels/Restaurants/Food',
+      'icon': Icons.hotel,
+      'bookmarked': false
+    },
+    {
+      'title': 'Hospitality/Tourism',
+      'icon': Icons.directions_boat,
+      'bookmarked': false
+    },
+    {
+      'title': 'Sports/Fitness/Recreation',
+      'icon': Icons.sports_gymnastics,
+      'bookmarked': false
+    },
+    {
+      'title': 'Hospital/Nursing/Healthcare',
+      'icon': Icons.local_hospital,
+      'bookmarked': false
+    },
+    {'title': 'Legal/Law', 'icon': Icons.local_library, 'bookmarked': false},
+    {
+      'title': 'Supervision/Quality Control',
+      'icon': Icons.check_circle,
+      'bookmarked': false
+    },
+    {'title': 'Apparel/Clothing', 'icon': Icons.checkroom, 'bookmarked': false},
+    {
+      'title': 'Ticketing/Airline/Marine',
+      'icon': Icons.airplane_ticket,
+      'bookmarked': false
+    },
+    {
+      'title': 'Teaching/Academic/Library',
+      'icon': Icons.library_add,
+      'bookmarked': false
+    },
+    {
+      'title': 'R&D/Science/Research',
+      'icon': Icons.hourglass_bottom,
+      'bookmarked': false
+    },
+    {
+      'title': 'Agriculture/Dairy/Environment',
+      'icon': Icons.computer,
+      'bookmarked': false
+    },
+    {'title': 'Security', 'icon': Icons.security, 'bookmarked': false},
+    {'title': 'Fashion/Design/Beauty', 'icon': Icons.spa, 'bookmarked': false},
+    {
+      'title': 'International Development',
+      'icon': Icons.sports_volleyball,
+      'bookmarked': false
+    },
+    {'title': 'KPO/BPO', 'icon': Icons.stream, 'bookmarked': false},
+    {
+      'title': 'Imports/Exports',
+      'icon': Icons.import_export,
+      'bookmarked': false
+    },
   ];
 
   List<int> rssCounts = [];
@@ -125,7 +213,26 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
       'https://www.topjobs.lk/rss/imports_exports.rss'
     ];
     rssCounts = List<int>.filled(rssUrls.length, 0);
+    initializeSharedPreferences();
     fetchRSSCounts();
+  }
+
+  void initializeSharedPreferences() async {
+    _prefs = await SharedPreferences.getInstance();
+    for (int i = 0; i < rssTitles.length; i++) {
+      bool isBookmarked = _prefs.getBool('bookmark_$i') ?? false;
+      setState(() {
+        rssTitles[i]['bookmarked'] = isBookmarked;
+      });
+    }
+  }
+
+  void _toggleBookmark(int index) {
+    setState(() {
+      bool newValue = !rssTitles[index]['bookmarked'];
+      rssTitles[index]['bookmarked'] = newValue;
+      _prefs.setBool('bookmark_$index', newValue);
+    });
   }
 
   void fetchRSSCounts() async {
@@ -178,6 +285,37 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
     ioClient.close();
   }
 
+  void navigateToBookmarkedItems(String title) async {
+    String rssUrl =
+        rssUrls[rssTitles.indexWhere((item) => item['title'] == title)];
+
+    var httpClient = HttpClient()
+      ..badCertificateCallback =
+          ((X509Certificate cert, String host, int port) => true);
+    var ioClient = IOClient(httpClient);
+
+    var response = await ioClient.get(Uri.parse(rssUrl));
+
+    if (response.statusCode == 200) {
+      var rssFeed = RssFeed.parse(response.body);
+      // ignore: use_build_context_synchronously
+      Navigator.push(
+        context,
+        PageTransition(
+          type: PageTransitionType.fade,
+          duration: const Duration(milliseconds: 200),
+          child: RSSFeedItemsScreen(feed: rssFeed),
+        ),
+      );
+    }
+
+    ioClient.close();
+  }
+
+  List<Map<String, dynamic>> getBookmarkedItems() {
+    return rssTitles.where((item) => item['bookmarked'] == true).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
@@ -204,6 +342,101 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
         color: Colors.transparent,
         child: Column(
           children: [
+            if (getBookmarkedItems().isNotEmpty)
+              Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color.fromARGB(255, 194, 25, 25),
+                      Color.fromARGB(255, 156, 19, 19),
+                      Color.fromARGB(255, 119, 13, 13),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40.0),
+                    topRight: Radius.circular(40.0),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(
+                        top: 25,
+                      ),
+                      child: const Text(
+                        'My Favorite Categories',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: SizedBox(
+                          height: 90,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: getBookmarkedItems().length,
+                            itemBuilder: (context, index) {
+                              final title =
+                                  getBookmarkedItems()[index]['title'];
+                              return InkWell(
+                                onTap: () {
+                                  navigateToBookmarkedItems(title);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: SizedBox(
+                                    child: Center(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Center(
+                                            child: Icon(
+                                              getBookmarkedItems()[index]
+                                                  ['icon'],
+                                              size: 28,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          Center(
+                                            child: Text(
+                                              title.length > 10
+                                                  ? title.substring(0, 10) +
+                                                      '...'
+                                                  : title,
+                                              textAlign: TextAlign.center,
+                                              style: const TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.only(top: 20),
@@ -234,58 +467,88 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                       physics: const ScrollPhysics(),
                       itemCount: rssUrls.length,
                       itemBuilder: (BuildContext context, int index) {
+                        final isBookmarked = rssTitles[index]['bookmarked'];
                         return InkWell(
                           child: Card(
                             elevation: 0.0,
-                            child: Row(
-                              children: [
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                const SizedBox(
-                                  height: 50,
-                                ),
-                                SizedBox(
-                                  height: 50,
-                                  child: Icon(
-                                    rssTitles[index]['icon'],
-                                    size: 22,
-                                    color:
-                                        const Color.fromARGB(255, 49, 49, 49),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 10,
-                                    right: 15,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text.rich(
-                                        TextSpan(
-                                          text:
-                                              '${rssTitles[index]['title']} ⦁ ',
-                                          style: const TextStyle(
-                                            fontSize: 15.0,
-                                          ),
-                                          children: <TextSpan>[
-                                            TextSpan(
-                                              text: '(${rssCounts[index]})',
-                                              style: const TextStyle(
-                                                color: Colors.green,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 35,
+                                    child: IconButton(
+                                      icon: Icon(
+                                        isBookmarked
+                                            ? Icons.bookmark
+                                            : Icons.bookmark_border,
+                                        color: isBookmarked
+                                            ? const Color.fromARGB(
+                                                255, 16, 219, 50)
+                                            : Colors.grey,
                                       ),
-                                    ],
+                                      onPressed: () {
+                                        _toggleBookmark(index);
+                                      },
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  const SizedBox(
+                                    width: 5,
+                                  ),
+                                  const SizedBox(
+                                    height: 50,
+                                  ),
+                                  SizedBox(
+                                    height: 50,
+                                    child: Icon(
+                                      rssTitles[index]['icon'],
+                                      size: 22,
+                                      color:
+                                          const Color.fromARGB(255, 49, 49, 49),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 10,
+                                      right: 15,
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text.rich(
+                                          TextSpan(
+                                            text:
+                                                '${rssTitles[index]['title']} ',
+                                            style: const TextStyle(
+                                              fontSize: 15.0,
+                                            ),
+                                            children: <TextSpan>[
+                                              if (rssCounts[index] > 0)
+                                                TextSpan(
+                                                  text:
+                                                      ' ⦁  (${rssCounts[index]})',
+                                                  style: TextStyle(
+                                                    color: isBookmarked
+                                                        ? const Color.fromARGB(
+                                                            255, 16, 219, 50)
+                                                        : const Color.fromARGB(
+                                                            255, 75, 75, 75),
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           onTap: () {
