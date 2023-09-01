@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:simple_animation_transition/simple_animation_transition.dart';
 import 'package:topjobs/models/feedlist.dart';
-// import 'package:webfeed/webfeed.dart';
-// import 'package:http/io_client.dart';
-// import 'dart:io';
+import 'package:webfeed/webfeed.dart';
+import 'package:http/io_client.dart';
+import 'dart:io';
 
 class WelcomePage extends StatefulWidget {
   final List<int> rssCounts;
@@ -89,7 +89,7 @@ class _WelcomePageState extends State<WelcomePage> {
     // ];
     // rssCounts = List<int>.filled(rssUrls.length, 0);
     // fetchRSSCounts();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 3), () {
       navigateToRSSFeedScreen();
     });
   }

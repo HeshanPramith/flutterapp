@@ -52,12 +52,11 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
         return (widget.feed.items ?? []).where((item) {
           final title = item.title?.toString().toLowerCase() ?? '';
           final description = item.description?.toString().toLowerCase() ?? '';
-          final location = item.dc?.coverage.toString().toLowerCase() ?? '';
-          final company = item.dc?.creator.toString().toLowerCase() ?? '';
+          final location = item.dc?.coverage.toString().toLowerCase() ??
+              ''; // Replace "location" with the actual field in your RssItem class representing the location.
 
           bool matchesSearchQuery = title.contains(searchQuery.toLowerCase()) ||
-              description.contains(searchQuery.toLowerCase()) ||
-              company.contains(searchQuery.toLowerCase());
+              description.contains(searchQuery.toLowerCase());
           bool matchesSelectedLocation = selectedLocation.isEmpty ||
               location.contains(selectedLocation.toLowerCase());
 
@@ -324,7 +323,7 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                         style: const TextStyle(color: Colors.white),
                         decoration: const InputDecoration(
                             border: InputBorder.none,
-                            hintText: 'Search Your Job or Company',
+                            hintText: 'Search Your Job',
                             hintStyle: TextStyle(
                               color: Colors.white,
                               fontSize: 14,
@@ -560,20 +559,6 @@ class _RSSFeedItemsScreenState extends State<RSSFeedItemsScreen> {
                     ),
                   ),
                 ),
-              ),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
-                    child: Text(
-                      'Total Jobs: ${filteredItems.length}',
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),
